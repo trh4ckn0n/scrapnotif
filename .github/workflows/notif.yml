@@ -2,7 +2,7 @@ name: Notifications Telegram
 
 on:
   watch:
-    types: [started, created]  # "started" pour suivre, "created" pour donner une étoile
+    types: [started, created]  # Lorsqu'une personne suit votre profil ou star un repo
   fork:
     types: [created]   # Lorsqu'un utilisateur fork votre repo
   workflow_dispatch:
@@ -17,22 +17,42 @@ jobs:
           echo "Type d'événement : ${{ github.event_name }}"
           echo "Action : ${{ github.event.action }}"
 
+      - name: Obtenir les informations de l'utilisateur GitHub
+        run: |
+          curl -s "https://api.github.com/users/${{ github.actor }}" | jq .name, .login, .avatar_url
+
       - name: Envoi de la notification Telegram
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: |
+          USERNAME="${{ github.actor }}"
+          ACTION_TYPE="${{ github.event_name }}"
+          ACTION="${{ github.event.action }}"
+          REPOSITORY="${{ github.repository }}"
+
+          # Obtenez le nom et l'avatar de l'utilisateur GitHub via l'API
+          USER_INFO=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.name, .avatar_url')
+          USER_NAME=$(echo $USER_INFO | cut -d '"' -f 2)
+          USER_AVATAR=$(echo $USER_INFO | cut -d '"' -f 4)
+
+          # Téléchargement de l'avatar de l'utilisateur
+          AVATAR_PATH="/tmp/avatar.jpg"
+          curl -s $USER_AVATAR -o $AVATAR_PATH
+
           # Message à envoyer sur Telegram
           MESSAGE="🔔 Nouvelle activité GitHub :
-          
-          - Action : ${{ github.event_name }}
-          - Type d'action : ${{ github.event.action }}
-          - Utilisateur : ${{ github.actor }}  # Affiche le nom d'utilisateur de la personne
-          - Référentiel : ${{ github.repository }}
 
-          👉 Allez voir votre profil GitHub pour plus de détails : https://github.com/${{ github.actor }}"
+          - Action : ${ACTION_TYPE}
+          - Type d'action : ${ACTION}
+          - Utilisateur : ${USER_NAME} (@${USERNAME}) 
+          - Référentiel : ${REPOSITORY}
 
-          # Envoi du message via Telegram API
-          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+          - Profil utilisateur : https://github.com/${USERNAME}
+          👉 Allez voir votre profil GitHub pour plus de détails : https://github.com/${USERNAME}"
+
+          # Envoi du message avec l'avatar via Telegram API
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendPhoto" \
                -d chat_id="${CHAT_ID}" \
-               -d text="${MESSAGE}"
+               -d caption="${MESSAGE}" \
+               -F photo=@"$AVATAR_PATH"
