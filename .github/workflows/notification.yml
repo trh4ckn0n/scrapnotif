@@ -1,0 +1,22 @@
+name: Send Notification
+
+on:
+  pull_request:
+    types: [opened]
+  push:
+    branches:
+      - main
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Send Telegram Notification
+      run: |
+        curl -X POST https://api.telegram.org/bot<YOUR_BOT_TOKEN>/sendMessage \
+        -d chat_id=<YOUR_CHAT_ID> \
+        -d text="A new PR was opened or a commit was pushed to the main branch!"
