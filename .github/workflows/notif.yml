@@ -1,0 +1,38 @@
+name: Notifications Telegram
+
+on:
+  watch:
+    types: [started]   # Lorsqu'une personne suit votre profil
+  fork:
+    types: [created]   # Lorsqu'un utilisateur fork votre repo
+  star:
+    types: [created]   # Lorsqu'une personne aime un de vos repos
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer les événements GitHub
+        run: |
+          echo "Événement GitHub déclenché par : ${{ github.actor }}"
+          echo "Type d'événement : ${{ github.event_name }}"
+
+      - name: Envoi de la notification Telegram
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: |
+          # Message à envoyer sur Telegram
+          MESSAGE="🔔 Nouvelle activité GitHub :
+          
+          - Action : ${{ github.event_name }}
+          - Type d'action : ${{ github.event.action }}
+          - Utilisateur : ${{ github.actor }}  # Affiche le nom d'utilisateur de la personne
+          - Référentiel : ${{ github.repository }}
+
+          👉 Allez voir votre profil GitHub pour plus de détails : https://github.com/${{ github.actor }}"
+
+          # Envoi du message via Telegram API
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+               -d chat_id="${CHAT_ID}" \
+               -d text="${MESSAGE}"
