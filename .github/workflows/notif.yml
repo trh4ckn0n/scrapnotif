@@ -1,4 +1,5 @@
 name: Notifications Telegram
+workflow_dispatch: # Permet d'exécuter manuellement
 
 on:
   watch:
