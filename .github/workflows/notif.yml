@@ -6,7 +6,7 @@ on:
   fork:
     types: [created]   # Lorsqu'un utilisateur fork votre repo
   star:
-    types: [created]   # Lorsqu'une personne aime un de vos repos
+    types: [created]   # Lorsqu'une personne aime un de vos repos (en utilisant un événement "watch")
   workflow_dispatch:
   
 jobs:
