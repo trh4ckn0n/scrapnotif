@@ -17,6 +17,6 @@ jobs:
 
     - name: Send Telegram Notification
       run: |
-        curl -X POST https://api.telegram.org/bot<YOUR_BOT_TOKEN>/sendMessage \
-        -d chat_id=<YOUR_CHAT_ID> \
+        curl -X POST https://api.telegram.org/bot8057972779:AAGG3SSVOUkG0VM_ycrIYgBrBrHUMpRMRy0/sendMessage \
+        -d chat_id=-1001855473977 \
         -d text="A new PR was opened or a commit was pushed to the main branch!"
