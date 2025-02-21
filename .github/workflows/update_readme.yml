@@ -34,14 +34,14 @@ jobs:
           git config --global user.email "your_email@example.com"
           git config --global user.name "GitHub Actions"
 
-      - name: Pull the latest changes
-        run: |
-          git pull origin main --rebase
-
       - name: Add all changes to git
         run: |
           git add -A
           git commit -m "Update README with latest scraping results" || echo "No changes to commit"
+
+      - name: Pull the latest changes
+        run: |
+          git pull origin main --rebase || echo "Pull failed due to uncommitted changes"
 
       - name: Push changes to repository
         run: |
