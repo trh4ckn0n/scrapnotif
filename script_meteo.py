@@ -20,14 +20,37 @@ def get_weather_data():
     else:
         return None
 
-# Fonction pour mettre à jour le README.md
+# Fonction pour mettre à jour le README.md (remplacer l'ancienne météo)
 def update_readme(weather, temp, humidity, wind_speed):
-    with open("README.md", "a", encoding="utf-8") as readme_file:
-        readme_file.write(f"\n## Météo à {CITY} - {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}\n")
-        readme_file.write(f"**Conditions:** {weather}\n")
-        readme_file.write(f"**Température:** {temp}°C\n")
-        readme_file.write(f"**Humidité:** {humidity}%\n")
-        readme_file.write(f"**Vitesse du vent:** {wind_speed} m/s\n")
+    try:
+        # Lire le contenu du README.md
+        with open("README.md", "r", encoding="utf-8") as readme_file:
+            content = readme_file.read()
+
+        # Trouver et remplacer la section de la météo précédente
+        updated_content = content
+        start_index = updated_content.find("## Météo à {}".format(CITY))
+        if start_index != -1:
+            end_index = updated_content.find("##", start_index + 1)  # Chercher le prochain en-tête de section
+            if end_index == -1:
+                end_index = len(updated_content)
+            updated_content = updated_content[:start_index] + updated_content[end_index:]
+
+        # Ajouter la nouvelle météo
+        new_weather_info = f"## Météo à {CITY} - {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}\n"
+        new_weather_info += f"**Conditions:** {weather}\n"
+        new_weather_info += f"**Température:** {temp}°C\n"
+        new_weather_info += f"**Humidité:** {humidity}%\n"
+        new_weather_info += f"**Vitesse du vent:** {wind_speed} m/s\n"
+
+        updated_content += new_weather_info
+
+        # Réécrire le README.md avec la nouvelle météo
+        with open("README.md", "w", encoding="utf-8") as readme_file:
+            readme_file.write(updated_content)
+
+    except Exception as e:
+        print(f"Erreur lors de la mise à jour du README.md : {e}")
 
 # Fonction principale
 def main():
