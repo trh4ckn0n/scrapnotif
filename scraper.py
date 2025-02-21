@@ -1,85 +1,87 @@
 import requests
 from bs4 import BeautifulSoup
+import os
 import json
+import time
+import random
 
-def scrape_website(url):
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text, 'html.parser')
-    
-    # Récupérer les titres, les liens, et les descriptions (ajustez les sélecteurs selon votre besoin)
-    articles = []
-    
-    # Exemple d'extraction des éléments sur une page de blog
-    for article in soup.find_all('article'):  # En supposant que les articles sont dans des balises <article>
-        title = article.find('h2', class_='post-title')  # Ajustez cette ligne selon la structure du site
-        link = article.find('a', href=True)
-        description = article.find('p')  # Une description pourrait être dans un <p> (ajustez le sélecteur)
-        date = article.find('time')  # Si la date est dans une balise <time>
-
-        if title:
-            title_text = title.get_text(strip=True)
-        else:
-            title_text = "Titre non trouvé"
-        
-        link_url = link['href'] if link else "Lien non disponible"
-        description_text = description.get_text(strip=True) if description else "Description non disponible"
-        date_text = date.get_text(strip=True) if date else "Date non disponible"
-
-        articles.append({
-            'title': title_text,
-            'link': link_url,
-            'description': description_text,
-            'date': date_text
-        })
-    
-    return articles
-
-def update_report(articles, filename='report.json'):
+# Fonction pour envoyer une requête HTTP et récupérer le contenu HTML de la page
+def fetch_page(url, headers=None, params=None):
     try:
-        with open(filename, 'r') as file:
-            data = json.load(file)
-    except FileNotFoundError:
-        data = {}
-    
-    # Mise à jour des informations
-    data['latest_articles'] = articles
-    
-    with open(filename, 'w') as file:
-        json.dump(data, file, indent=4)
+        response = requests.get(url, headers=headers, params=params)
+        response.raise_for_status()
+        return response.text
+    except requests.RequestException as e:
+        print(f"Erreur lors de la récupération de la page : {e}")
+        return None
 
-def update_readme(articles, filename='README.md'):
-    with open(filename, 'r') as f:
-        content = f.read()
+# Fonction pour parser le contenu HTML avec BeautifulSoup
+def parse_html(html_content):
+    return BeautifulSoup(html_content, 'html.parser')
 
-    # Créer un format propre pour afficher les articles dans le fichier README
-    scraping_section = "\n## Scraping Results\n"
-    if articles:
-        scraping_section += "\nVoici les derniers articles extraits du site :\n"
-        for article in articles:
-            scraping_section += f"\n### {article['title']}\n"
-            scraping_section += f"**Date**: {article['date']}\n"
-            scraping_section += f"**Description**: {article['description']}\n"
-            scraping_section += f"**Lien**: [Lire l'article]({article['link']})\n"
-            scraping_section += "\n---\n"
-    else:
-        scraping_section += "Aucun article trouvé.\n"
+# Fonction pour extraire les liens d'images
+def extract_images(soup):
+    images = []
+    for img_tag in soup.find_all('img'):
+        img_url = img_tag.get('src')
+        if img_url:
+            images.append(img_url)
+    return images
 
-    # Si la section "Scraping Results" existe déjà, on la remplace, sinon on l'ajoute
-    if "## Scraping Results" in content:
-        content = content.replace("## Scraping Results", scraping_section)
-    else:
-        content += scraping_section
+# Fonction pour extraire les liens des fichiers CSS
+def extract_css(soup):
+    css_links = []
+    for link_tag in soup.find_all('link', rel='stylesheet'):
+        css_url = link_tag.get('href')
+        if css_url:
+            css_links.append(css_url)
+    return css_links
 
-    # Réécriture du fichier avec les articles mis à jour
-    with open(filename, 'w') as f:
-        f.write(content)
+# Fonction pour extraire les scripts JS
+def extract_scripts(soup):
+    scripts = []
+    for script_tag in soup.find_all('script', src=True):
+        script_url = script_tag.get('src')
+        if script_url:
+            scripts.append(script_url)
+    return scripts
 
-if __name__ == '__main__':
-    url = 'https://www.alsetex.fr'  # Remplacer par le site réel
-    articles = scrape_website(url)
-    
-    # Vérification que les articles sont bien extraits
-    print("Scraped articles:", articles)
+# Fonction pour sauvegarder les résultats dans un fichier JSON
+def save_to_json(data, filename):
+    with open(filename, 'w') as json_file:
+        json.dump(data, json_file, indent=4)
 
-    update_report(articles)
-    update_readme(articles)
+# Fonction pour faire une pause aléatoire entre les requêtes (utile pour éviter de surcharger le serveur)
+def random_pause(min_seconds=1, max_seconds=3):
+    time.sleep(random.uniform(min_seconds, max_seconds))
+
+# Fonction principale de scraping qui intègre toutes les étapes
+def scrape_page(url, headers=None, params=None, output_dir='output'):
+    # Créer un répertoire de sortie si nécessaire
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    # Récupérer et parser la page
+    html_content = fetch_page(url, headers, params)
+    if not html_content:
+        print("Échec du scraping.")
+        return
+
+    soup = parse_html(html_content)
+
+    # Extraire les données souhaitées
+    images = extract_images(soup)
+    css_links = extract_css(soup)
+    scripts = extract_scripts(soup)
+
+    # Enregistrer les résultats dans des fichiers
+    save_to_json(images, os.path.join(output_dir, 'images.json'))
+    save_to_json(css_links, os.path.join(output_dir, 'css_links.json'))
+    save_to_json(scripts, os.path.join(output_dir, 'scripts.json'))
+
+    print(f"Scraping terminé. Résultats sauvegardés dans '{output_dir}'.")
+
+# Exemple d'utilisation
+if __name__ == "__main__":
+    url_to_scrape = 'https://www.alsetex.fr/'  # Remplacer par l'URL de la page cible
+    scrape_page(url_to_scrape)
