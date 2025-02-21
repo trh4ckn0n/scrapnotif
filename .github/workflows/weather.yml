@@ -1,0 +1,32 @@
+name: Mise à jour de la météo dans README
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-weather:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vérification du code source
+        uses: actions/checkout@v2
+
+      - name: Installer les dépendances
+        run: |
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
+
+      - name: Exécuter le script météo
+        run: |
+          source venv/bin/activate
+          python3 script_meteo.py  # Remplacez par le nom de votre script
+
+      - name: Commit et push des changements dans README.md
+        run: |
+          git config --global user.email "votre-email@example.com"
+          git config --global user.name "Votre Nom"
+          git add README.md
+          git commit -m "Mise à jour de la météo dans README"
+          git push
