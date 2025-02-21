@@ -1,5 +1,4 @@
 name: Notifications Telegram
-workflow_dispatch: # Permet d'exécuter manuellement
 
 on:
   watch:
@@ -8,7 +7,8 @@ on:
     types: [created]   # Lorsqu'un utilisateur fork votre repo
   star:
     types: [created]   # Lorsqu'une personne aime un de vos repos
-
+  workflow_dispatch:
+  
 jobs:
   notify:
     runs-on: ubuntu-latest
