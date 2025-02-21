@@ -14,3 +14,6 @@ Ce repo contient plusieurs workflows GitHub Actions :
 
 ## Scraping Results
 Latest titles: 
+
+## Scraping Results
+Latest titles: 
