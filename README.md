@@ -11,3 +11,6 @@ Ce repo contient plusieurs workflows GitHub Actions :
 1. Configurez votre bot Telegram pour envoyer des notifications.
 2. Modifiez le script de scraping pour qu'il récupère les données pertinentes du site que vous souhaitez surveiller.
 3. Exécutez les workflows GitHub Actions pour les vérifications de sécurité.
+
+## Scraping Results
+Latest titles: 
