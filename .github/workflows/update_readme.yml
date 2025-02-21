@@ -2,11 +2,11 @@ name: Update README with Scraping Results
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Cela exécutera le workflow tous les jours à minuit
+    - cron: '0 0 * * *'  # Exécution tous les jours à minuit
   push:
     branches:
       - main
-  workflow_dispatch: # Permet d'exécuter le workflow manuellement
+  workflow_dispatch: # Permet d'exécuter manuellement
 
 jobs:
   update-readme:
@@ -23,15 +23,20 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          pip install requests beautifulsoup4
 
       - name: Run scraper and update README
         run: |
           python scraper.py
 
+      - name: Configure git user
+        run: |
+          git config --global user.email "your_email@example.com"
+          git config --global user.name "GitHub Actions"
+
       - name: Add all changes to git
         run: |
-          git add -A  # Ajoute tous les fichiers non suivis au suivi Git
+          git add -A
           git commit -m "Update README with latest scraping results" || echo "No changes to commit"
 
       - name: Push changes to repository
