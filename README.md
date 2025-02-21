@@ -12,14 +12,26 @@ Ce repo contient plusieurs workflows GitHub Actions :
 2. Modifiez le script de scraping pour qu'il récupère les données pertinentes du site que vous souhaitez surveiller.
 3. Exécutez les workflows GitHub Actions pour les vérifications de sécurité.
 
-## Scraping Results
-Latest titles: 
 
 ## Scraping Results
+Aucun article trouvé.
+
 Latest titles: 
 
-## Scraping Results
-Latest titles: 
 
 ## Scraping Results
+Aucun article trouvé.
+
+Latest titles: 
+
+
+## Scraping Results
+Aucun article trouvé.
+
+Latest titles: 
+
+
+## Scraping Results
+Aucun article trouvé.
+
 Latest titles: 
