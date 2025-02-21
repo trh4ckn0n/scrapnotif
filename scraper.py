@@ -24,7 +24,13 @@ def update_report(titles, filename='report.json'):
     with open(filename, 'w') as file:
         json.dump(data, file, indent=4)
 
+def update_readme(titles, filename='README.md'):
+    with open(filename, 'a') as f:
+        f.write("\n## Scraping Results\n")
+        f.write(f"Latest titles: {', '.join(titles)}\n")  # Joins the titles in a readable format
+
 if __name__ == '__main__':
     url = 'https://www.alsetex.fr'  # Remplacer par le site réel
     titles = scrape_website(url)
     update_report(titles)
+    update_readme(titles)
