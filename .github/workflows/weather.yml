@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch: # Permet d'exécuter manuellement
 
 jobs:
   update-weather:
