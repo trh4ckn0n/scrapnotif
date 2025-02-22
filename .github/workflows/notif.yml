@@ -1,31 +1,48 @@
-#!/bin/bash
+name: Notify on GitHub Dispatch Event
 
-# Définir l'utilisateur GitHub (modifiez ce nom selon votre besoin)
-USERNAME="trh4ckn0n"
+on:
+  workflow_dispatch:
 
-# Récupération des informations de l'utilisateur via l'API GitHub
-USER_NAME=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.name // "Nom non disponible"')
-USER_LOGIN=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.login')
-USER_AVATAR=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.avatar_url')
+jobs:
+  notify:
+    runs-on: ubuntu-latest
 
-# Afficher les informations récupérées (pour vérifier)
-echo "Nom de l'utilisateur : $USER_NAME"
-echo "Identifiant GitHub : $USER_LOGIN"
-echo "Avatar URL : $USER_AVATAR"
+    steps:
+      - name: Récupérer les informations de l'utilisateur GitHub
+        run: |
+          # Utilisateur GitHub à surveiller
+          USERNAME="trh4ckn0n"
+          
+          # Récupération des informations utilisateur depuis l'API GitHub
+          USER_NAME=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.name // "Nom non disponible"')
+          USER_LOGIN=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.login')
+          USER_AVATAR=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.avatar_url')
 
-# Configuration des variables pour l'envoi Telegram
-BOT_TOKEN="8057972779:AAGG3SSVOUkG0VM_ycrIYgBrBrHUMpRMRy0"
-CHAT_ID="-1001855473977"
+          # Vérifier les informations récupérées
+          echo "Nom de l'utilisateur : $USER_NAME"
+          echo "Identifiant GitHub : $USER_LOGIN"
+          echo "Avatar URL : $USER_AVATAR"
 
-# Message à envoyer sur Telegram
-MESSAGE="🔔 Nouvelle activité GitHub :\n\n- Action : workflow_dispatch\n- Type d'action : \n- Utilisateur : @$USER_LOGIN\n- Référentiel : trh4ckn0n/scrapnotif\n\n- Profil utilisateur : https://github.com/${USER_LOGIN} 👈 Allez voir votre profil GitHub pour plus de détails : https://github.com/${USER_LOGIN}\n\nAvatar : $USER_AVATAR"
+          # Définir les variables pour l'envoi Telegram
+          echo "USER_NAME=${USER_NAME}" >> $GITHUB_ENV
+          echo "USER_LOGIN=${USER_LOGIN}" >> $GITHUB_ENV
+          echo "USER_AVATAR=${USER_AVATAR}" >> $GITHUB_ENV
 
-# Envoi de la notification Telegram
-curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
-     -d "chat_id=${CHAT_ID}" \
-     -d "text=${MESSAGE}"
-     
-# Optionnel : si vous souhaitez envoyer l'avatar comme photo dans Telegram
-curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto" \
-     -d "chat_id=${CHAT_ID}" \
-     -d "photo=${USER_AVATAR}"
+      - name: Envoi de la notification Telegram
+        run: |
+          # Token et Chat ID pour Telegram
+          BOT_TOKEN="8057972779:AAGG3SSVOUkG0VM_ycrIYgBrBrHUMpRMRy0"
+          CHAT_ID="-1001855473977"
+
+          # Message à envoyer via Telegram
+          MESSAGE="🔔 Nouvelle activité GitHub :\n\n- Action : workflow_dispatch\n- Utilisateur : @$USER_LOGIN\n- Référentiel : trh4ckn0n/scrapnotif\n\n- Profil utilisateur : https://github.com/${USER_LOGIN} 👈 Allez voir votre profil GitHub pour plus de détails : https://github.com/${USER_LOGIN}\n\nAvatar : $USER_AVATAR"
+
+          # Envoi du message à Telegram
+          curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+               -d "chat_id=${CHAT_ID}" \
+               -d "text=${MESSAGE}"
+
+          # Optionnel : Envoi de l'avatar comme photo sur Telegram
+          curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto" \
+               -d "chat_id=${CHAT_ID}" \
+               -d "photo=${USER_AVATAR}"
