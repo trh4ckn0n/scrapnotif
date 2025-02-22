@@ -39,9 +39,14 @@ jobs:
           ACTION="${{ github.event.action }}"
           REPOSITORY="${{ github.repository }}"
 
-          # Téléchargement de l'avatar de l'utilisateur
-          AVATAR_PATH="/tmp/avatar.jpg"
-          curl -s $USER_AVATAR -o $AVATAR_PATH
+          # Vérification que l'URL de l'avatar existe avant de télécharger l'image
+          if [ -n "$USER_AVATAR" ]; then
+            # Téléchargement de l'avatar de l'utilisateur
+            AVATAR_PATH="/tmp/avatar.jpg"
+            curl -s $USER_AVATAR -o $AVATAR_PATH
+          else
+            echo "Pas d'URL d'avatar disponible pour l'utilisateur $USER_LOGIN."
+          fi
 
           # Message à envoyer sur Telegram
           MESSAGE="🔔 Nouvelle activité GitHub :
@@ -54,8 +59,14 @@ jobs:
           - Profil utilisateur : https://github.com/${USER_LOGIN}
           👉 Allez voir votre profil GitHub pour plus de détails : https://github.com/${USER_LOGIN}"
 
-          # Envoi du message avec l'avatar via Telegram API
-          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendPhoto" \
-               -d chat_id="${CHAT_ID}" \
-               -d caption="${MESSAGE}" \
-               -F photo=@"$AVATAR_PATH"
+          # Envoi du message avec ou sans avatar via Telegram API
+          if [ -n "$USER_AVATAR" ]; then
+            curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendPhoto" \
+                 -d chat_id="${CHAT_ID}" \
+                 -d caption="${MESSAGE}" \
+                 -F photo=@"$AVATAR_PATH"
+          else
+            curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
+                 -d chat_id="${CHAT_ID}" \
+                 -d text="${MESSAGE}"
+          fi
