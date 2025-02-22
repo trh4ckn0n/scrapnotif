@@ -19,22 +19,25 @@ jobs:
 
       - name: Obtenir les informations de l'utilisateur GitHub
         run: |
-          curl -s "https://api.github.com/users/${{ github.actor }}" | jq .name, .login, .avatar_url
+          USERNAME="${{ github.actor }}"
+          
+          # Récupération des informations de l'utilisateur
+          USER_NAME=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.name')
+          USER_LOGIN=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.login')
+          USER_AVATAR=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.avatar_url')
+
+          echo "Nom de l'utilisateur : $USER_NAME"
+          echo "Identifiant GitHub : $USER_LOGIN"
+          echo "Avatar URL : $USER_AVATAR"
 
       - name: Envoi de la notification Telegram
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
         run: |
-          USERNAME="${{ github.actor }}"
           ACTION_TYPE="${{ github.event_name }}"
           ACTION="${{ github.event.action }}"
           REPOSITORY="${{ github.repository }}"
-
-          # Obtenez le nom et l'avatar de l'utilisateur GitHub via l'API
-          USER_INFO=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.name, .avatar_url')
-          USER_NAME=$(echo $USER_INFO | cut -d '"' -f 2)
-          USER_AVATAR=$(echo $USER_INFO | cut -d '"' -f 4)
 
           # Téléchargement de l'avatar de l'utilisateur
           AVATAR_PATH="/tmp/avatar.jpg"
@@ -45,11 +48,11 @@ jobs:
 
           - Action : ${ACTION_TYPE}
           - Type d'action : ${ACTION}
-          - Utilisateur : ${USER_NAME} (@${USERNAME}) 
+          - Utilisateur : ${USER_NAME} (@${USER_LOGIN}) 
           - Référentiel : ${REPOSITORY}
 
-          - Profil utilisateur : https://github.com/${USERNAME}
-          👉 Allez voir votre profil GitHub pour plus de détails : https://github.com/${USERNAME}"
+          - Profil utilisateur : https://github.com/${USER_LOGIN}
+          👉 Allez voir votre profil GitHub pour plus de détails : https://github.com/${USER_LOGIN}"
 
           # Envoi du message avec l'avatar via Telegram API
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendPhoto" \
