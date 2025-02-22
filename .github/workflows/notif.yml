@@ -1,72 +1,31 @@
-name: Notifications Telegram
+#!/bin/bash
 
-on:
-  watch:
-    types: [started, created]
-  fork:
-    types: [created]
-  workflow_dispatch:
+# Définir l'utilisateur GitHub (modifiez ce nom selon votre besoin)
+USERNAME="trh4ckn0n"
 
-jobs:
-  notify:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Récupérer les événements GitHub
-        run: |
-          echo "Événement GitHub déclenché par : ${{ github.actor }}"
-          echo "Type d'événement : ${{ github.event_name }}"
-          echo "Action : ${{ github.event.action }}"
+# Récupération des informations de l'utilisateur via l'API GitHub
+USER_NAME=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.name // "Nom non disponible"')
+USER_LOGIN=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.login')
+USER_AVATAR=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.avatar_url')
 
-      - name: Obtenir les informations de l'utilisateur GitHub
-        run: |
-          USERNAME="${{ github.actor }}"
-          
-          # Récupération des informations de l'utilisateur avec des valeurs par défaut
-          USER_NAME=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.name // "Utilisateur non trouvé"')
-          USER_LOGIN=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.login')
-          USER_AVATAR=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.avatar_url')
+# Afficher les informations récupérées (pour vérifier)
+echo "Nom de l'utilisateur : $USER_NAME"
+echo "Identifiant GitHub : $USER_LOGIN"
+echo "Avatar URL : $USER_AVATAR"
 
-          echo "Nom de l'utilisateur : $USER_NAME"
-          echo "Identifiant GitHub : $USER_LOGIN"
-          echo "Avatar URL : $USER_AVATAR"
+# Configuration des variables pour l'envoi Telegram
+BOT_TOKEN="8057972779:AAGG3SSVOUkG0VM_ycrIYgBrBrHUMpRMRy0"
+CHAT_ID="-1001855473977"
 
-      - name: Envoi de la notification Telegram
-        env:
-          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
-          CHAT_ID: ${{ secrets.CHAT_ID }}
-        run: |
-          ACTION_TYPE="${{ github.event_name }}"
-          ACTION="${{ github.event.action }}"
-          REPOSITORY="${{ github.repository }}"
+# Message à envoyer sur Telegram
+MESSAGE="🔔 Nouvelle activité GitHub :\n\n- Action : workflow_dispatch\n- Type d'action : \n- Utilisateur : @$USER_LOGIN\n- Référentiel : trh4ckn0n/scrapnotif\n\n- Profil utilisateur : https://github.com/${USER_LOGIN} 👈 Allez voir votre profil GitHub pour plus de détails : https://github.com/${USER_LOGIN}\n\nAvatar : $USER_AVATAR"
 
-          # Vérification de la disponibilité de l'avatar
-          if [ -n "$USER_AVATAR" ]; then
-            # Téléchargement de l'avatar de l'utilisateur
-            AVATAR_PATH="/tmp/avatar.jpg"
-            curl -s $USER_AVATAR -o $AVATAR_PATH
-          else
-            echo "Pas d'URL d'avatar disponible pour l'utilisateur $USER_LOGIN."
-          fi
-
-          # Message à envoyer sur Telegram
-          MESSAGE="🔔 Nouvelle activité GitHub :
-
-          - Action : ${ACTION_TYPE}
-          - Type d'action : ${ACTION}
-          - Utilisateur : ${USER_NAME} (@${USER_LOGIN}) 
-          - Référentiel : ${REPOSITORY}
-
-          - Profil utilisateur : https://github.com/${USER_LOGIN}
-          👉 Allez voir votre profil GitHub pour plus de détails : https://github.com/${USER_LOGIN}"
-
-          # Envoi du message avec ou sans avatar via Telegram API
-          if [ -n "$USER_AVATAR" ]; then
-            curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendPhoto" \
-                 -d chat_id="${CHAT_ID}" \
-                 -d caption="${MESSAGE}" \
-                 -F photo=@"$AVATAR_PATH"
-          else
-            curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage" \
-                 -d chat_id="${CHAT_ID}" \
-                 -d text="${MESSAGE}"
-          fi
+# Envoi de la notification Telegram
+curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendMessage" \
+     -d "chat_id=${CHAT_ID}" \
+     -d "text=${MESSAGE}"
+     
+# Optionnel : si vous souhaitez envoyer l'avatar comme photo dans Telegram
+curl -s -X POST "https://api.telegram.org/bot${BOT_TOKEN}/sendPhoto" \
+     -d "chat_id=${CHAT_ID}" \
+     -d "photo=${USER_AVATAR}"
