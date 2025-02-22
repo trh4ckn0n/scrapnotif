@@ -2,11 +2,11 @@ name: Notifications Telegram
 
 on:
   watch:
-    types: [started, created]  # Lorsqu'une personne suit votre profil ou star un repo
+    types: [started, created]
   fork:
-    types: [created]   # Lorsqu'un utilisateur fork votre repo
+    types: [created]
   workflow_dispatch:
-  
+
 jobs:
   notify:
     runs-on: ubuntu-latest
@@ -21,8 +21,8 @@ jobs:
         run: |
           USERNAME="${{ github.actor }}"
           
-          # Récupération des informations de l'utilisateur
-          USER_NAME=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.name')
+          # Récupération des informations de l'utilisateur avec des valeurs par défaut
+          USER_NAME=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.name // "Utilisateur non trouvé"')
           USER_LOGIN=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.login')
           USER_AVATAR=$(curl -s "https://api.github.com/users/${USERNAME}" | jq -r '.avatar_url')
 
@@ -39,7 +39,7 @@ jobs:
           ACTION="${{ github.event.action }}"
           REPOSITORY="${{ github.repository }}"
 
-          # Vérification que l'URL de l'avatar existe avant de télécharger l'image
+          # Vérification de la disponibilité de l'avatar
           if [ -n "$USER_AVATAR" ]; then
             # Téléchargement de l'avatar de l'utilisateur
             AVATAR_PATH="/tmp/avatar.jpg"
