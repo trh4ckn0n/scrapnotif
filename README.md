@@ -1,5 +1,3 @@
-Je voudrais conserver ke debut du README.md:
-
 Projet GitHub Actions avec Notifications, Scraping et Sécurité
 
 Ce repo contient plusieurs workflows GitHub Actions :
