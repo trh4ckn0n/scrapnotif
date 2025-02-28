@@ -1,4 +1,5 @@
-pytz
 requests
+pytz
+matplotlib
 beautifulsoup4
 pip-audit
