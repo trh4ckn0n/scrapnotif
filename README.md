@@ -1,34 +1,22 @@
-Je voudrais conserver ke debut du README.md:
-
-Projet GitHub Actions avec Notifications, Scraping et Sécurité
+# Projet GitHub Actions avec Notifications, Scraping et Sécurité
 
 Ce repo contient plusieurs workflows GitHub Actions :
 
-1. Scraping & Reporting : Un script Python qui scrute un site web pour récupérer des informations (comme les titres des articles) et met à jour un fichier JSON.
+1. **Scraping & Reporting** : Un script Python qui scrute un site web pour récupérer des informations (comme les titres des articles) et met à jour un fichier JSON.
+2. **Envoi de Notifications** : Notifie via Telegram ou Discord lorsqu'une PR est créée ou un commit est poussé.
+3. **Monitoring & Sécurité** : Vérifie les dépendances du projet pour détecter des vulnérabilités de sécurité en utilisant pip-audit.
 
-
-2. Envoi de Notifications : Notifie via Telegram ou Discord lorsqu'une PR est créée ou un commit est poussé.
-
-
-3. Monitoring & Sécurité : Vérifie les dépendances du projet pour détecter des vulnérabilités de sécurité en utilisant pip-audit.
-
-
-
-Usage
+## Usage
 
 1. Configurez votre bot Telegram pour envoyer des notifications.
-
-
 2. Modifiez le script de scraping pour qu'il récupère les données pertinentes du site que vous souhaitez surveiller.
-
-
 3. Exécutez les workflows GitHub Actions pour les vérifications de sécurité.
 
+---
 
-
-Météo actuelle:
+## Météo actuelle :
 ## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 28/02/2025 21:18:57
+🕒 Mise à jour : 28/02/2025 21:20:41
 
 ### 🌍 Paris
 **Conditions :** nuageux
@@ -44,8 +32,8 @@ Météo actuelle:
 
 ### 🌍 Lyon
 **Conditions :** couvert
-**Température :** 1.11°C
-**Humidité :** 80%
+**Température :** 1.63°C
+**Humidité :** 78%
 **Vent :** 1.49 m/s
 
 ### 🌍 Toulouse
@@ -75,8 +63,8 @@ Météo actuelle:
 ### 🌍 Montpellier
 **Conditions :** ciel dégagé
 **Température :** 7.71°C
-**Humidité :** 53%
-**Vent :** 5.66 m/s
+**Humidité :** 57%
+**Vent :** 5.14 m/s
 
 ### 🌍 Bordeaux
 **Conditions :** ciel dégagé
@@ -87,8 +75,8 @@ Météo actuelle:
 ### 🌍 Lille
 **Conditions :** ciel dégagé
 **Température :** 3.74°C
-**Humidité :** 79%
-**Vent :** 3.6 m/s
+**Humidité :** 76%
+**Vent :** 3.09 m/s
 
 ### 🌍 Gaza
 **Conditions :** ciel dégagé
