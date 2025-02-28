@@ -23,7 +23,7 @@ Ce repo contient plusieurs workflows GitHub Actions :
 
 ## Météo actuelle :
 ## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 01/03/2025 00:10:34
+🕒 Mise à jour : 01/03/2025 00:13:04
 
 ### 🌍 Strasbourg 🌥️
 **Conditions :** couvert
@@ -51,7 +51,7 @@ Ce repo contient plusieurs workflows GitHub Actions :
 
 ### 🌍 Paris 🌥️
 **Conditions :** nuageux
-**Température :** 5.02°C
+**Température :** 5.01°C
 **Humidité :** 86%
 **Vent :** 4.63 m/s
 
@@ -121,7 +121,7 @@ Ce repo contient plusieurs workflows GitHub Actions :
 **Humidité :** 70%
 **Vent :** 0.45 m/s
 
-### 🌡️ Graphique d'humidité des villes
+<p align='center'><img src='https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif' width='100%' style='border-radius: 5px; border: 3px solid #39FF14; box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;' /></p>### 🌡️ Graphique d'humidité des villes
 ![Graphique d'humidité](humidity_chart.png)
 
 ## Météo actuelle
