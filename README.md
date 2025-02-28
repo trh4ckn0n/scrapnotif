@@ -23,7 +23,8 @@ Ce repo contient plusieurs workflows GitHub Actions :
 
 ## Météo actuelle :
 ## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 01/03/2025 00:22:59
+
+🕒 Mise à jour : 01/03/2025 00:30:30
 
 ### 🌍 Strasbourg 🌥️
 **Conditions :** couvert
@@ -33,7 +34,7 @@ Ce repo contient plusieurs workflows GitHub Actions :
 
 ### 🌍 Mulhouse 🌥️
 **Conditions :** nuageux
-**Température :** 2.59°C
+**Température :** 2.51°C
 **Humidité :** 90%
 **Vent :** 2.57 m/s
 
@@ -46,44 +47,44 @@ Ce repo contient plusieurs workflows GitHub Actions :
 ### 🌍 Besançon 🌥️
 **Conditions :** nuageux
 **Température :** 0.18°C
-**Humidité :** 88%
+**Humidité :** 89%
 **Vent :** 2.42 m/s
 
 ### 🌍 Paris 🌥️
-**Conditions :** nuageux
-**Température :** 5.01°C
-**Humidité :** 86%
+**Conditions :** partiellement nuageux
+**Température :** 4.74°C
+**Humidité :** 87%
 **Vent :** 4.63 m/s
 
 ### 🌍 Marseille 🌥️
 **Conditions :** couvert
-**Température :** 6.95°C
-**Humidité :** 77%
+**Température :** 4.75°C
+**Humidité :** 72%
 **Vent :** 0.7 m/s
 
 ### 🌍 Lyon 🌥️
 **Conditions :** couvert
-**Température :** -0.16°C
-**Humidité :** 85%
+**Température :** -0.09°C
+**Humidité :** 86%
 **Vent :** 1.48 m/s
 
 ### 🌍 Toulouse ☀️
 **Conditions :** ciel dégagé
-**Température :** 5.99°C
-**Humidité :** 61%
-**Vent :** 2.57 m/s
+**Température :** 6.99°C
+**Humidité :** 57%
+**Vent :** 2.06 m/s
 
 ### 🌍 Nice 🌥️
 **Conditions :** couvert
-**Température :** 4.16°C
+**Température :** 4.72°C
 **Humidité :** 84%
 **Vent :** 0.38 m/s
 
-### 🌍 Nantes 🌥️
-**Conditions :** partiellement nuageux
+### 🌍 Nantes ☀️
+**Conditions :** ciel dégagé
 **Température :** 5.96°C
 **Humidité :** 75%
-**Vent :** 3.6 m/s
+**Vent :** 3.09 m/s
 
 ### 🌍 Strasbourg 🌥️
 **Conditions :** couvert
@@ -95,13 +96,13 @@ Ce repo contient plusieurs workflows GitHub Actions :
 **Conditions :** ciel dégagé
 **Température :** 6.71°C
 **Humidité :** 57%
-**Vent :** 6.17 m/s
+**Vent :** 5.66 m/s
 
 ### 🌍 Bordeaux ☀️
 **Conditions :** ciel dégagé
 **Température :** 6.15°C
 **Humidité :** 65%
-**Vent :** 4.12 m/s
+**Vent :** 3.6 m/s
 
 ### 🌍 Lille ☀️
 **Conditions :** ciel dégagé
@@ -117,12 +118,14 @@ Ce repo contient plusieurs workflows GitHub Actions :
 
 ### 🌍 Kiev 🌥️
 **Conditions :** couvert
-**Température :** 2.07°C
-**Humidité :** 70%
-**Vent :** 0.45 m/s
+**Température :** -1.05°C
+**Humidité :** 66%
+**Vent :** 3.47 m/s
 
-<p align='center'><img src='https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif' width='100%' style='border-radius: 5px; border: 3px solid #39FF14; box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;' /></p><br>### 🌡️ Graphique d'humidité des villes
+
+### 🌡️ Graphique d'humidité des villes
 ![Graphique d'humidité](humidity_chart.png)
+
 <p align='center'><img src='https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif' width='100%' style='border-radius: 5px; border: 3px solid #39FF14; box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;' /></p>
 ## Météo actuelle
 ✅ Météo mise à jour avec succès.
