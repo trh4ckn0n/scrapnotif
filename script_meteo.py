@@ -1,6 +1,7 @@
 import requests
 from datetime import datetime
 import pytz
+import matplotlib.pyplot as plt
 
 # Clé API OpenWeatherMap (à remplacer si nécessaire)
 API_KEY = "c7381d724afbdc1e5e150a2482400341"
@@ -37,6 +38,7 @@ weather_emojis = {
     "humidité élevée": "💧",  # Humidité élevée
     "éclaircies": "🌤️",  # Éclaircies
 }
+
 # Fonction pour obtenir les données météo d'une ville
 def get_weather_data(city):
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric&lang=fr"  # Langue française
@@ -58,6 +60,21 @@ def get_weather_data(city):
         print(f"❌ Erreur avec {city} - Code {response.status_code}")
         return {"city": city, "weather": None}
 
+# Fonction pour créer un graphique d'humidité
+def create_humidity_chart(weather_data):
+    cities = [data["city"] for data in weather_data if data["humidity"] is not None]
+    humidity_values = [data["humidity"] for data in weather_data if data["humidity"] is not None]
+
+    plt.figure(figsize=(10, 5))
+    plt.bar(cities, humidity_values, color="skyblue")
+    plt.title("Taux d'humidité des villes", fontsize=14)
+    plt.xlabel("Villes", fontsize=12)
+    plt.ylabel("Humidité (%)", fontsize=12)
+    plt.xticks(rotation=45, ha="right")
+    plt.tight_layout()
+    plt.savefig("humidity_chart.png")
+    plt.close()
+
 # Fonction pour mettre à jour le README.md
 def update_readme(weather_data):
     try:
@@ -78,6 +95,10 @@ def update_readme(weather_data):
             else:
                 new_weather_info += f"### 🌍 {city}\n❌ Erreur de récupération des données météo\n\n"
 
+        # Ajout du graphique d'humidité
+        new_weather_info += "### 🌡️ Graphique d'humidité des villes\n"
+        new_weather_info += "![Graphique d'humidité](humidity_chart.png)\n"
+
         # Réécriture du fichier README.md
         with open("README.md", "w", encoding="utf-8") as readme_file:
             readme_file.write(new_weather_info)
@@ -90,6 +111,7 @@ def update_readme(weather_data):
 # Fonction principale
 def main():
     weather_data = [get_weather_data(city) for city in CITIES]
+    create_humidity_chart(weather_data)  # Créer le graphique d'humidité
     update_readme(weather_data)
 
 if __name__ == "__main__":
