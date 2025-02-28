@@ -1,5 +1,5 @@
 ## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 28/02/2025 20:13:52
+🕒 Mise à jour : 28/02/2025 20:14:33
 
 ### 🌍 Paris
 **Conditions :** nuageux
