@@ -12,8 +12,8 @@ Ce repo contient plusieurs workflows GitHub Actions :
 2. Modifiez le script de scraping pour qu'il récupère les données pertinentes du site que vous souhaitez surveiller.
 3. Exécutez les workflows GitHub Actions pour les vérifications de sécurité.
 
-## Météo à Strasbourg - 22/02/2025 00:24:19
-**Conditions:** légère pluie
-**Température:** 7.01°C
-**Humidité:** 87%
-**Vitesse du vent:** 0.51 m/s
+## Météo à Strasbourg - 28/02/2025 20:03:27
+**Conditions:** nuageux
+**Température:** 3.97°C
+**Humidité:** 93%
+**Vitesse du vent:** 1.03 m/s
