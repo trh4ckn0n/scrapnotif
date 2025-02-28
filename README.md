@@ -1,5 +1,7 @@
 # Projet GitHub Actions avec Notifications, Scraping et Sécurité
 
+<img src="./file-GPYyyn25B1XkGrfas8hQdk.webp" alt="Image 1" width="400"/>
+
 Ce repo contient plusieurs workflows GitHub Actions :
 
 1. **Scraping & Reporting** : Un script Python qui scrute un site web pour récupérer des informations (comme les titres des articles) et met à jour un fichier JSON.
@@ -13,10 +15,11 @@ Ce repo contient plusieurs workflows GitHub Actions :
 3. Exécutez les workflows GitHub Actions pour les vérifications de sécurité.
 
 ---
+<img src="./file-9Sjd4puWVL4rccYH5NQcty.webp" alt="Image 2" width="400"/>
 
 ## Météo actuelle :
 ## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 01/03/2025 00:04:14
+🕒 Mise à jour : 01/03/2025 00:06:28
 
 ### 🌍 Strasbourg 🌥️
 **Conditions :** couvert
