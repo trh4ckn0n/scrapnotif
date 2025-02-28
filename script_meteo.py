@@ -26,19 +26,38 @@ def get_weather_data(city):
         print(f"❌ Erreur avec {city} - Code {response.status_code}")
         return {"city": city, "weather": None}
 
+# Fonction pour associer une condition météo à un émoji
+def weather_to_emoji(weather_description):
+    weather_map = {
+        "clear sky": "☀️",
+        "few clouds": "⛅",
+        "scattered clouds": "☁️",
+        "broken clouds": "☁️",
+        "shower rain": "🌧️",
+        "rain": "🌧️",
+        "thunderstorm": "⚡",
+        "snow": "❄️",
+        "mist": "🌫️",
+        "fog": "🌫️",
+        "haze": "🌫️"
+    }
+    
+    return weather_map.get(weather_description.lower(), "🌍")  # Retourne un émoji par défaut si la condition n'est pas trouvée
+
 # Fonction pour mettre à jour le README.md
 def update_readme(weather_data):
     try:
         # Contenu météo
         new_weather_info = "## Météo des grandes villes + Gaza et Kiev 🌍\n"
-        paris_tz = pytz.timezone('Europe/Paris')# Définir le fuseau horaire de Paris
+        paris_tz = pytz.timezone('Europe/Paris')  # Définir le fuseau horaire de Paris
         current_time = datetime.now(paris_tz)
         new_weather_info += f"🕒 Mise à jour : {current_time.strftime('%d/%m/%Y %H:%M:%S')}\n\n"
 
         for data in weather_data:
             city = data["city"]
             if data["weather"]:
-                new_weather_info += f"### 🌍 {city}\n"
+                emoji = weather_to_emoji(data["weather"])  # Obtenir l'émoji correspondant
+                new_weather_info += f"### 🌍 {city} {emoji}\n"
                 new_weather_info += f"**Conditions :** {data['weather']}\n"
                 new_weather_info += f"**Température :** {data['temp']}°C\n"
                 new_weather_info += f"**Humidité :** {data['humidity']}%\n"
