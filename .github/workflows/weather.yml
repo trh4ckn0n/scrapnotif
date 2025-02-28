@@ -25,14 +25,28 @@ jobs:
         run: |
           source venv/bin/activate
           python3 script_meteo.py  # Remplace par le nom de ton script
+          
+          # Extraire la météo et la sauvegarder dans une variable
+          METEO=$(python3 script_meteo.py)  # Cette commande doit retourner uniquement la météo
+
+      - name: Mettre à jour la section météo dans README.md
+        run: |
+          # Remplacer la section météo dans README.md
+          sed -i "s|<!-- METEO_START -->.*<!-- METEO_END -->|<!-- METEO_START -->\n$METEO\n<!-- METEO_END -->|" README.md
 
       - name: Commit et push des changements dans README.md
         run: |
           git config --global user.email "trhacknon@proton.me"
           git config --global user.name "Trhacknon-bot"
-          git add README.md  # Ajoute tous les changements non suivis
-          git commit -a -m "Commit automatique des changements non validés" || echo "Aucun changement à commit"
-          git pull --rebase origin main  # Récupère les modifications distantes
-          # git add README.md
+
+          # Ajouter uniquement le fichier README.md
+          git add README.md
+
+          # Faire un commit si des changements sont présents
           git commit -m "Mise à jour de la météo dans README" || echo "Aucun changement à commit"
-          git push origin main  # Pousse les changements après avoir réintégré les modifications distantes
+
+          # Récupérer les modifications distantes avant de pousser
+          git pull origin main --no-rebase || echo "Pas de changements distants à récupérer"
+
+          # Pousser les modifications dans le fichier README.md
+          git push origin main
