@@ -106,7 +106,7 @@ def create_humidity_chart(weather_data):
 def update_readme(weather_data):
     try:
         # Contenu météo
-        new_weather_info = "## Météo des grandes villes + Gaza et Kiev 🌍\n"
+        new_weather_info = "## Météo des grandes villes + Gaza et Kiev 🌍\n\n"
         paris_tz = pytz.timezone('Europe/Paris')  # Définir le fuseau horaire de Paris
         current_time = datetime.now(paris_tz)
         new_weather_info += f"🕒 Mise à jour : {current_time.strftime('%d/%m/%Y %H:%M:%S')}\n\n"
@@ -123,11 +123,8 @@ def update_readme(weather_data):
                 new_weather_info += f"### 🌍 {city}\n❌ Erreur de récupération des données météo\n\n"
 
         # Ajout du graphique d'humidité
-        new_weather_info += f"<p align='center'><img src='https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif' width='100%' style='border-radius: 5px; border: 3px solid #39FF14; box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;' /></p><br>"
-
-        # Ajouter ensuite les informations suivantes
-        new_weather_info += "### 🌡️ Graphique d'humidité des villes\n"
-        new_weather_info += "![Graphique d'humidité](humidity_chart.png)\n"        
+        new_weather_info += "\n### 🌡️ Graphique d'humidité des villes\n"
+        new_weather_info += "![Graphique d'humidité](humidity_chart.png)\n\n"        
         new_weather_info += f"<p align='center'><img src='https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif' width='100%' style='border-radius: 5px; border: 3px solid #39FF14; box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;' /></p>"
 
         # Réécriture du fichier README.md
@@ -138,7 +135,6 @@ def update_readme(weather_data):
 
     except Exception as e:
         print(f"❌ Erreur lors de la mise à jour du README.md : {e}")
-
 # Fonction principale
 def main():
     weather_data = [get_weather_data(city) for city in CITIES]
