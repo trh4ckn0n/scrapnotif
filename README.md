@@ -1,5 +1,5 @@
 ## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 28/02/2025 21:01:54
+🕒 Mise à jour : 28/02/2025 21:03:44
 
 ### 🌍 Paris
 **Conditions :** nuageux
@@ -10,12 +10,12 @@
 ### 🌍 Marseille
 **Conditions :** couvert
 **Température :** 6.95°C
-**Humidité :** 72%
+**Humidité :** 71%
 **Vent :** 1.16 m/s
 
 ### 🌍 Lyon
 **Conditions :** couvert
-**Température :** 1.63°C
+**Température :** 2.04°C
 **Humidité :** 78%
 **Vent :** 1.49 m/s
 
@@ -27,7 +27,7 @@
 
 ### 🌍 Nice
 **Conditions :** couvert
-**Température :** 4.72°C
+**Température :** 5.28°C
 **Humidité :** 84%
 **Vent :** 0.23 m/s
 
