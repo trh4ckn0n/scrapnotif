@@ -16,7 +16,7 @@ Ce repo contient plusieurs workflows GitHub Actions :
 
 ## Météo actuelle :
 ## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 28/02/2025 22:36:42
+🕒 Mise à jour : 28/02/2025 22:38:16
 
 ### 🌍 Paris ☁️
 **Conditions :** nuageux
@@ -32,8 +32,8 @@ Ce repo contient plusieurs workflows GitHub Actions :
 
 ### 🌍 Lyon 🌥️
 **Conditions :** couvert
-**Température :** 1.39°C
-**Humidité :** 80%
+**Température :** 0.56°C
+**Humidité :** 81%
 **Vent :** 1.6 m/s
 
 ### 🌍 Toulouse 🌞
@@ -54,9 +54,9 @@ Ce repo contient plusieurs workflows GitHub Actions :
 **Humidité :** 70%
 **Vent :** 3.6 m/s
 
-### 🌍 Strasbourg 🌥️
+### 🌍 Strasbourg 🌧️
 **Conditions :** légère pluie
-**Température :** 2.1°C
+**Température :** 1.95°C
 **Humidité :** 84%
 **Vent :** 2.25 m/s
 
