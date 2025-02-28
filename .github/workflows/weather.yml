@@ -24,15 +24,12 @@ jobs:
       - name: Exécuter le script météo
         run: |
           source venv/bin/activate
-          python3 script_meteo.py  # Remplace par le nom de ton script
-          
-          # Extraire la météo et la sauvegarder dans une variable
-          METEO=$(python3 script_meteo.py)  # Cette commande doit retourner uniquement la météo
+          METEO=$(python3 script_meteo.py)  # Cette commande doit retourner la météo au format texte brut
 
       - name: Mettre à jour la section météo dans README.md
         run: |
-          # Remplacer la section météo dans README.md
-          sed -i "s|<!-- METEO_START -->.*<!-- METEO_END -->|<!-- METEO_START -->\n$METEO\n<!-- METEO_END -->|" README.md
+          # Remplacer la section météo dans README.md sans effacer le reste du fichier
+          sed -i '/<!-- METEO_START -->/,/<!-- METEO_END -->/c\<!-- METEO_START -->\n$METEO\n<!-- METEO_END -->' README.md
 
       - name: Commit et push des changements dans README.md
         run: |
