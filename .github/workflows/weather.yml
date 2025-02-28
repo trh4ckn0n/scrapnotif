@@ -30,9 +30,9 @@ jobs:
         run: |
           git config --global user.email "trhacknon@proton.me"
           git config --global user.name "Trhacknon-bot"
-          # git add .  # Ajoute tous les changements non suivis
+          git add README.md  # Ajoute tous les changements non suivis
           git commit -m "Commit automatique des changements non validés" || echo "Aucun changement à commit"
           git pull --rebase origin main  # Récupère les modifications distantes
-          git add README.md
+          # git add README.md
           git commit -m "Mise à jour de la météo dans README" || echo "Aucun changement à commit"
           git push origin main  # Pousse les changements après avoir réintégré les modifications distantes
