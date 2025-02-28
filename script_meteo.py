@@ -13,6 +13,7 @@ weather_emojis = {
     "ciel dégagé": "🌞",
     "peu nuageux": "🌤️",
     "nuages épars": "🌥️",
+    "nuageux": "☁️",
     "nuages fragmentés": "☁️",
     "averses": "🌧️",
     "pluie": "🌧️",
