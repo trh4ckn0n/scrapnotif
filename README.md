@@ -1,36 +1,5 @@
-Projet GitHub Actions avec Notifications, Scraping et Sécurité
-
-Ce repo contient plusieurs workflows GitHub Actions :
-
-1. Scraping & Reporting : Un script Python qui scrute un site web pour récupérer des informations (comme les titres des articles) et met à jour un fichier JSON.
-
-
-2. Envoi de Notifications : Notifie via Telegram ou Discord lorsqu'une PR est créée ou un commit est poussé.
-
-
-3. Monitoring & Sécurité : Vérifie les dépendances du projet pour détecter des vulnérabilités de sécurité en utilisant pip-audit.
-
-
-
-Usage
-
-1. Configurez votre bot Telegram pour envoyer des notifications.
-
-
-2. Modifiez le script de scraping pour qu'il récupère les données pertinentes du site que vous souhaitez surveiller.
-
-
-3. Exécutez les workflows GitHub Actions pour les vérifications de sécurité.
-
-
-
-Météo actuelle
-
-<!-- METEO_START -->La météo d'aujourd'hui est : en attente de mise à jour.
-
-
 ## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 28/02/2025 20:59:07
+🕒 Mise à jour : 28/02/2025 21:01:54
 
 ### 🌍 Paris
 **Conditions :** nuageux
@@ -41,12 +10,12 @@ Météo actuelle
 ### 🌍 Marseille
 **Conditions :** couvert
 **Température :** 6.95°C
-**Humidité :** 71%
+**Humidité :** 72%
 **Vent :** 1.16 m/s
 
 ### 🌍 Lyon
 **Conditions :** couvert
-**Température :** 2.04°C
+**Température :** 1.63°C
 **Humidité :** 78%
 **Vent :** 1.49 m/s
 
@@ -58,7 +27,7 @@ Météo actuelle
 
 ### 🌍 Nice
 **Conditions :** couvert
-**Température :** 5.28°C
+**Température :** 4.72°C
 **Humidité :** 84%
 **Vent :** 0.23 m/s
 
@@ -104,5 +73,3 @@ Météo actuelle
 **Humidité :** 74%
 **Vent :** 0.89 m/s
 
-
-<!-- METEO_END -->
