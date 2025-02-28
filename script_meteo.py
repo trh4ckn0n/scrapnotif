@@ -2,7 +2,7 @@ import requests
 from datetime import datetime
 import pytz
 import matplotlib.pyplot as plt
-
+import numpy as np
 # Clé API OpenWeatherMap (à remplacer si nécessaire)
 API_KEY = "c7381d724afbdc1e5e150a2482400341"
 
@@ -61,18 +61,45 @@ def get_weather_data(city):
         return {"city": city, "weather": None}
 
 # Fonction pour créer un graphique d'humidité
+
+
 def create_humidity_chart(weather_data):
+    # Filtrer les données valides
     cities = [data["city"] for data in weather_data if data["humidity"] is not None]
     humidity_values = [data["humidity"] for data in weather_data if data["humidity"] is not None]
 
-    plt.figure(figsize=(10, 5))
-    plt.bar(cities, humidity_values, color="skyblue")
-    plt.title("Taux d'humidité des villes", fontsize=14)
-    plt.xlabel("Villes", fontsize=12)
-    plt.ylabel("Humidité (%)", fontsize=12)
-    plt.xticks(rotation=45, ha="right")
+    # Création de la figure
+    plt.figure(figsize=(12, 6))
+    
+    # Dégradé de couleurs pour les barres
+    bar_colors = plt.cm.coolwarm(np.linspace(0, 1, len(humidity_values)))  # Utilisation d'un dégradé de couleurs
+    
+    bars = plt.bar(cities, humidity_values, color=bar_colors, edgecolor="black", linewidth=1.5)
+
+    # Ajouter des titres et des labels avec des polices stylées
+    plt.title("Taux d'humidité des villes", fontsize=16, fontweight='bold', color="white", backgroundcolor='purple')
+    plt.xlabel("Villes", fontsize=14, fontweight='bold', color="white")
+    plt.ylabel("Humidité (%)", fontsize=14, fontweight='bold', color="white")
+    
+    # Ajouter des annotations au-dessus des barres
+    for bar in bars:
+        yval = bar.get_height()
+        plt.text(bar.get_x() + bar.get_width() / 2, yval + 2, f'{yval}%', ha='center', fontsize=10, color="black")
+
+    # Améliorer la présentation des étiquettes de l'axe des X
+    plt.xticks(rotation=45, ha="right", fontsize=12, color="white")
+
+    # Ajouter une grille avec une couleur discrète
+    plt.grid(True, linestyle="--", color="white", alpha=0.3)
+    
+    # Personnaliser l'arrière-plan de la figure
+    plt.gcf().set_facecolor('#2a2a2a')  # Fond sombre
+
+    # Ajuster la disposition pour éviter les chevauchements
     plt.tight_layout()
-    plt.savefig("humidity_chart.png")
+
+    # Sauvegarder le graphique
+    plt.savefig("humidity_chart.png", dpi=300)  # Sauvegarder avec une résolution haute qualité
     plt.close()
 
 # Fonction pour mettre à jour le README.md
