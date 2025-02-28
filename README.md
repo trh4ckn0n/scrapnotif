@@ -16,10 +16,10 @@ Ce repo contient plusieurs workflows GitHub Actions :
 
 ## Météo actuelle :
 ## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 28/02/2025 22:54:02
+🕒 Mise à jour : 28/02/2025 22:59:58
 
 ### 🌍 Strasbourg 🌧️
-**Conditions :** pluie modérée
+**Conditions :** légère pluie
 **Température :** 1.95°C
 **Humidité :** 84%
 **Vent :** 2.25 m/s
@@ -79,7 +79,7 @@ Ce repo contient plusieurs workflows GitHub Actions :
 **Vent :** 3.09 m/s
 
 ### 🌍 Strasbourg 🌧️
-**Conditions :** pluie modérée
+**Conditions :** légère pluie
 **Température :** 1.95°C
 **Humidité :** 84%
 **Vent :** 2.25 m/s
@@ -111,9 +111,11 @@ Ce repo contient plusieurs workflows GitHub Actions :
 ### 🌍 Kiev 🌥️
 **Conditions :** couvert
 **Température :** 2.07°C
-**Humidité :** 72%
-**Vent :** 0.89 m/s
+**Humidité :** 70%
+**Vent :** 0.45 m/s
 
+### 🌡️ Graphique d'humidité des villes
+![Graphique d'humidité](humidity_chart.png)
 
 ## Météo actuelle
 ✅ Météo mise à jour avec succès.
