@@ -8,16 +8,32 @@ API_KEY = "c7381d724afbdc1e5e150a2482400341"
 # Liste des villes
 CITIES = ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Strasbourg", "Montpellier", "Bordeaux", "Lille", "Gaza", "Kiev"]
 
+# Dictionnaire pour les emojis en fonction des conditions météo
+weather_emojis = {
+    "ciel dégagé": "🌞",
+    "peu nuageux": "🌤️",
+    "nuages épars": "🌥️",
+    "nuages fragmentés": "☁️",
+    "averses": "🌧️",
+    "pluie": "🌧️",
+    "orages": "🌩️",
+    "neige": "❄️",
+    "brouillard": "🌫️"
+}
+
 # Fonction pour obtenir les données météo d'une ville
 def get_weather_data(city):
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric&lang=fr"
+    url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric&lang=fr"  # Langue française
     response = requests.get(url)
 
     if response.status_code == 200:
         data = response.json()
+        weather_condition = data["weather"][0]["description"]
+        emoji = weather_emojis.get(weather_condition, "🌥️")  # Par défaut, utilisez un emoji de nuages
         return {
             "city": city,
-            "weather": data["weather"][0]["description"],
+            "weather": weather_condition,
+            "emoji": emoji,
             "temp": data["main"]["temp"],
             "humidity": data["main"]["humidity"],
             "wind_speed": data["wind"]["speed"]
@@ -25,24 +41,6 @@ def get_weather_data(city):
     else:
         print(f"❌ Erreur avec {city} - Code {response.status_code}")
         return {"city": city, "weather": None}
-
-# Fonction pour associer une condition météo à un émoji
-def weather_to_emoji(weather_description):
-    weather_map = {
-        "clear sky": "☀️",
-        "few clouds": "⛅",
-        "scattered clouds": "☁️",
-        "broken clouds": "☁️",
-        "shower rain": "🌧️",
-        "rain": "🌧️",
-        "thunderstorm": "⚡",
-        "snow": "❄️",
-        "mist": "🌫️",
-        "fog": "🌫️",
-        "haze": "🌫️"
-    }
-    
-    return weather_map.get(weather_description.lower(), "🌍")  # Retourne un émoji par défaut si la condition n'est pas trouvée
 
 # Fonction pour mettre à jour le README.md
 def update_readme(weather_data):
@@ -56,8 +54,7 @@ def update_readme(weather_data):
         for data in weather_data:
             city = data["city"]
             if data["weather"]:
-                emoji = weather_to_emoji(data["weather"])  # Obtenir l'émoji correspondant
-                new_weather_info += f"### 🌍 {city} {emoji}\n"
+                new_weather_info += f"### 🌍 {city} {data['emoji']}\n"
                 new_weather_info += f"**Conditions :** {data['weather']}\n"
                 new_weather_info += f"**Température :** {data['temp']}°C\n"
                 new_weather_info += f"**Humidité :** {data['humidity']}%\n"
