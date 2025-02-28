@@ -1,10 +1,10 @@
 ## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 28/02/2025 21:07:00
+🕒 Mise à jour : 28/02/2025 21:12:51
 
 ### 🌍 Paris
 **Conditions :** nuageux
 **Température :** 6.19°C
-**Humidité :** 82%
+**Humidité :** 83%
 **Vent :** 5.14 m/s
 
 ### 🌍 Marseille
@@ -39,7 +39,7 @@
 
 ### 🌍 Strasbourg
 **Conditions :** couvert
-**Température :** 2.77°C
+**Température :** 2.1°C
 **Humidité :** 83%
 **Vent :** 2.4 m/s
 
@@ -70,6 +70,38 @@
 ### 🌍 Kiev
 **Conditions :** couvert
 **Température :** 2.07°C
-**Humidité :** 74%
+**Humidité :** 73%
 **Vent :** 0.89 m/s
 
+Je voudrais conserver ke debut du README.md:
+
+Projet GitHub Actions avec Notifications, Scraping et Sécurité
+
+Ce repo contient plusieurs workflows GitHub Actions :
+
+1. Scraping & Reporting : Un script Python qui scrute un site web pour récupérer des informations (comme les titres des articles) et met à jour un fichier JSON.
+
+
+2. Envoi de Notifications : Notifie via Telegram ou Discord lorsqu'une PR est créée ou un commit est poussé.
+
+
+3. Monitoring & Sécurité : Vérifie les dépendances du projet pour détecter des vulnérabilités de sécurité en utilisant pip-audit.
+
+
+
+Usage
+
+1. Configurez votre bot Telegram pour envoyer des notifications.
+
+
+2. Modifiez le script de scraping pour qu'il récupère les données pertinentes du site que vous souhaitez surveiller.
+
+
+3. Exécutez les workflows GitHub Actions pour les vérifications de sécurité.
+
+
+
+Météo actuelle:
+
+## Météo actuelle
+✅ Météo mise à jour avec succès.
