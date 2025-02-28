@@ -1,75 +1,33 @@
-## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 28/02/2025 20:58:00
+Je voudrais conserver ke debut du README.md:
 
-### 🌍 Paris
-**Conditions :** nuageux
-**Température :** 6.19°C
-**Humidité :** 82%
-**Vent :** 5.14 m/s
+Projet GitHub Actions avec Notifications, Scraping et Sécurité
 
-### 🌍 Marseille
-**Conditions :** couvert
-**Température :** 6.95°C
-**Humidité :** 72%
-**Vent :** 1.16 m/s
+Ce repo contient plusieurs workflows GitHub Actions :
 
-### 🌍 Lyon
-**Conditions :** couvert
-**Température :** 2.04°C
-**Humidité :** 78%
-**Vent :** 1.49 m/s
+1. Scraping & Reporting : Un script Python qui scrute un site web pour récupérer des informations (comme les titres des articles) et met à jour un fichier JSON.
 
-### 🌍 Toulouse
-**Conditions :** ciel dégagé
-**Température :** 7.99°C
-**Humidité :** 57%
-**Vent :** 3.6 m/s
 
-### 🌍 Nice
-**Conditions :** couvert
-**Température :** 4.72°C
-**Humidité :** 84%
-**Vent :** 0.23 m/s
+2. Envoi de Notifications : Notifie via Telegram ou Discord lorsqu'une PR est créée ou un commit est poussé.
 
-### 🌍 Nantes
-**Conditions :** ciel dégagé
-**Température :** 7.96°C
-**Humidité :** 66%
-**Vent :** 4.12 m/s
 
-### 🌍 Strasbourg
-**Conditions :** couvert
-**Température :** 2.77°C
-**Humidité :** 83%
-**Vent :** 2.4 m/s
+3. Monitoring & Sécurité : Vérifie les dépendances du projet pour détecter des vulnérabilités de sécurité en utilisant pip-audit.
 
-### 🌍 Montpellier
-**Conditions :** ciel dégagé
-**Température :** 7.71°C
-**Humidité :** 57%
-**Vent :** 5.14 m/s
 
-### 🌍 Bordeaux
-**Conditions :** ciel dégagé
-**Température :** 7.15°C
-**Humidité :** 65%
-**Vent :** 5.66 m/s
 
-### 🌍 Lille
-**Conditions :** ciel dégagé
-**Température :** 3.74°C
-**Humidité :** 76%
-**Vent :** 3.09 m/s
+Usage
 
-### 🌍 Gaza
-**Conditions :** ciel dégagé
-**Température :** 12.76°C
-**Humidité :** 68%
-**Vent :** 0.59 m/s
+1. Configurez votre bot Telegram pour envoyer des notifications.
 
-### 🌍 Kiev
-**Conditions :** couvert
-**Température :** 2.07°C
-**Humidité :** 75%
-**Vent :** 0.45 m/s
 
+2. Modifiez le script de scraping pour qu'il récupère les données pertinentes du site que vous souhaitez surveiller.
+
+
+3. Exécutez les workflows GitHub Actions pour les vérifications de sécurité.
+
+
+
+Météo actuelle
+
+<!-- METEO_START -->La météo d'aujourd'hui est : en attente de mise à jour.
+
+<!-- METEO_END -->
