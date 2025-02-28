@@ -10,23 +10,32 @@ CITIES = ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Strasbour
 
 # Dictionnaire pour les emojis en fonction des conditions météo en français
 weather_emojis = {
-    "ciel dégagé": "🌞",  # Ciel dégagé
+    "ciel dégagé": "☀️",  # Ciel dégagé
     "quelques nuages": "🌤️",  # Quelques nuages
     "nuages épars": "🌥️",  # Nuages épars
-    "nuages fragmentés": "☁️",  # Nuages fragmentés
+    "nuages fragmentés": "🌥️",  # Nuages fragmentés
     "pluie modérée": "🌧️",  # Pluie modérée
     "pluie": "🌧️",  # Pluie
-    "orage": "🌩️",  # Orage
+    "averse de pluie": "🌧️",  # Averse de pluie
+    "orage": "⚡",  # Orage
     "neige": "❄️",  # Neige
+    "neige légère": "🌨️",  # Neige légère
     "brume": "🌫️",  # Brume
     "brouillard": "🌫️",  # Brouillard
     "poussière": "🌪️",  # Poussière
     "sable": "🌪️",  # Sable
     "cendres volcaniques": "🌋",  # Cendres volcaniques
     "rafales": "🌬️",  # Rafales
-    "tornade": "🌪️"  # Tornade
+    "vent fort": "🌬️",  # Vent fort
+    "tornade": "🌪️",  # Tornade
+    "pluie verglaçante": "🌨️",  # Pluie verglaçante
+    "givre": "❄️",  # Givre
+    "tempête de neige": "🌨️",  # Tempête de neige
+    "froid extrême": "🥶",  # Froid extrême
+    "chaleur extrême": "🥵",  # Chaleur extrême
+    "humidité élevée": "💧",  # Humidité élevée
+    "éclaircies": "🌤️",  # Éclaircies
 }
-
 # Fonction pour obtenir les données météo d'une ville
 def get_weather_data(city):
     url = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric&lang=fr"  # Langue française
