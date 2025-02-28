@@ -1,9 +1,9 @@
 ## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 28/02/2025 20:50:35
+🕒 Mise à jour : 28/02/2025 20:50:59
 
 ### 🌍 Paris
 **Conditions :** nuageux
-**Température :** 6.28°C
+**Température :** 6.24°C
 **Humidité :** 83%
 **Vent :** 5.14 m/s
 
@@ -71,5 +71,5 @@
 **Conditions :** couvert
 **Température :** 2.07°C
 **Humidité :** 75%
-**Vent :** 3.46 m/s
+**Vent :** 0.45 m/s
 
