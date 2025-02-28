@@ -16,17 +16,17 @@ Ce repo contient plusieurs workflows GitHub Actions :
 
 ## Météo actuelle :
 ## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 28/02/2025 22:38:16
+🕒 Mise à jour : 28/02/2025 22:42:47
 
-### 🌍 Paris ☁️
+### 🌍 Paris 🌥️
 **Conditions :** nuageux
-**Température :** 5.93°C
-**Humidité :** 85%
-**Vent :** 4.63 m/s
+**Température :** 5.8°C
+**Humidité :** 84%
+**Vent :** 5.14 m/s
 
 ### 🌍 Marseille 🌥️
 **Conditions :** couvert
-**Température :** 7.51°C
+**Température :** 6.95°C
 **Humidité :** 72%
 **Vent :** 0.97 m/s
 
@@ -38,9 +38,9 @@ Ce repo contient plusieurs workflows GitHub Actions :
 
 ### 🌍 Toulouse 🌞
 **Conditions :** ciel dégagé
-**Température :** 7.99°C
-**Humidité :** 53%
-**Vent :** 3.6 m/s
+**Température :** 6.99°C
+**Humidité :** 57%
+**Vent :** 3.09 m/s
 
 ### 🌍 Nice 🌥️
 **Conditions :** couvert
@@ -52,10 +52,10 @@ Ce repo contient plusieurs workflows GitHub Actions :
 **Conditions :** ciel dégagé
 **Température :** 6.96°C
 **Humidité :** 70%
-**Vent :** 3.6 m/s
+**Vent :** 3.09 m/s
 
 ### 🌍 Strasbourg 🌧️
-**Conditions :** légère pluie
+**Conditions :** pluie modérée
 **Température :** 1.95°C
 **Humidité :** 84%
 **Vent :** 2.25 m/s
@@ -64,19 +64,19 @@ Ce repo contient plusieurs workflows GitHub Actions :
 **Conditions :** ciel dégagé
 **Température :** 7.71°C
 **Humidité :** 53%
-**Vent :** 5.66 m/s
+**Vent :** 7.2 m/s
 
 ### 🌍 Bordeaux 🌞
 **Conditions :** ciel dégagé
-**Température :** 7.15°C
-**Humidité :** 65%
-**Vent :** 5.66 m/s
+**Température :** 6.15°C
+**Humidité :** 70%
+**Vent :** 4.63 m/s
 
 ### 🌍 Lille 🌞
 **Conditions :** ciel dégagé
 **Température :** 3.74°C
 **Humidité :** 79%
-**Vent :** 3.6 m/s
+**Vent :** 3.09 m/s
 
 ### 🌍 Gaza 🌞
 **Conditions :** ciel dégagé
@@ -87,8 +87,8 @@ Ce repo contient plusieurs workflows GitHub Actions :
 ### 🌍 Kiev 🌥️
 **Conditions :** couvert
 **Température :** 2.07°C
-**Humidité :** 73%
-**Vent :** 0.45 m/s
+**Humidité :** 72%
+**Vent :** 0.89 m/s
 
 
 ## Météo actuelle
