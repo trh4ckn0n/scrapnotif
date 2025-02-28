@@ -28,7 +28,7 @@ Usage
 
 Météo actuelle:
 ## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 28/02/2025 21:18:32
+🕒 Mise à jour : 28/02/2025 21:18:57
 
 ### 🌍 Paris
 **Conditions :** nuageux
@@ -62,9 +62,9 @@ Météo actuelle:
 
 ### 🌍 Nantes
 **Conditions :** ciel dégagé
-**Température :** 6.96°C
-**Humidité :** 70%
-**Vent :** 3.6 m/s
+**Température :** 7.96°C
+**Humidité :** 66%
+**Vent :** 4.12 m/s
 
 ### 🌍 Strasbourg
 **Conditions :** couvert
