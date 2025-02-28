@@ -19,6 +19,7 @@ weather_emojis = {
     "averse de pluie": "🌧️",  # Averse de pluie
     "orage": "⚡",  # Orage
     "neige": "❄️",  # Neige
+    "légère pluie": "🌧️",
     "neige légère": "🌨️",  # Neige légère
     "brume": "🌫️",  # Brume
     "brouillard": "🌫️",  # Brouillard
