@@ -17,3 +17,42 @@ Ce repo contient plusieurs workflows GitHub Actions :
 **Température:** 2.94°C
 **Humidité:** 82%
 **Vitesse du vent:** 2.37 m/s
+## Météo des grandes villes + Gaza et Kiev 🌍
+🕒 Mise à jour : 28/02/2025 20:10:18
+
+### 🌍 Paris
+❌ Erreur de récupération des données météo
+
+### 🌍 Marseille
+❌ Erreur de récupération des données météo
+
+### 🌍 Lyon
+❌ Erreur de récupération des données météo
+
+### 🌍 Toulouse
+❌ Erreur de récupération des données météo
+
+### 🌍 Nice
+❌ Erreur de récupération des données météo
+
+### 🌍 Nantes
+❌ Erreur de récupération des données météo
+
+### 🌍 Strasbourg
+❌ Erreur de récupération des données météo
+
+### 🌍 Montpellier
+❌ Erreur de récupération des données météo
+
+### 🌍 Bordeaux
+❌ Erreur de récupération des données météo
+
+### 🌍 Lille
+❌ Erreur de récupération des données météo
+
+### 🌍 Gaza
+❌ Erreur de récupération des données météo
+
+### 🌍 Kiev
+❌ Erreur de récupération des données météo
+
