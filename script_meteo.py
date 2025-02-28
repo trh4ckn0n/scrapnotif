@@ -127,7 +127,8 @@ def update_readme(weather_data):
 
         # Ajouter ensuite les informations suivantes
         new_weather_info += "### 🌡️ Graphique d'humidité des villes\n"
-        new_weather_info += "![Graphique d'humidité](humidity_chart.png)\n"        new_weather_info += f"<p align='center'><img src='https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif' width='100%' style='border-radius: 5px; border: 3px solid #39FF14; box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;' /></p>"
+        new_weather_info += "![Graphique d'humidité](humidity_chart.png)\n"        
+        new_weather_info += f"<p align='center'><img src='https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif' width='100%' style='border-radius: 5px; border: 3px solid #39FF14; box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;' /></p>"
 
         # Réécriture du fichier README.md
         with open("README.md", "w", encoding="utf-8") as readme_file:
