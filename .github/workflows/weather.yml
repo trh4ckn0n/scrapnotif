@@ -28,30 +28,38 @@ jobs:
           METEO=$(python3 script_meteo.py)  # Cette commande doit retourner la météo au format texte brut
           echo "METEO=$METEO" >> $GITHUB_ENV  # Déclare METEO comme variable d'environnement
 
-      - name: Ajouter le contenu de READMEO.md en haut de README.md
+      - name: Générer le graphique d'humidité
         run: |
-          # Ajouter le contenu de READMEO.md en haut de README.md
-          cat READMEO.md README.md > temp_readme.md
+          source venv/bin/activate
+          python3 generate_humidity_chart.py  # Ce script doit générer le fichier humidity_chart.png
+
+      - name: Ajouter le contenu de README.md en haut de README.md
+        run: |
+          # Ajouter le contenu de README.md en haut de README.md
+          cat README.md README.md > temp_readme.md
           mv temp_readme.md README.md  # Remplacer README.md par la version mise à jour
 
       - name: Ajouter la section météo mise à jour à README.md
         run: |
-          # Ajouter la section de météo mise à jour sous le contenu ajouté de READMEO.md
+          # Ajouter la section de météo mise à jour sous le contenu de README.md
           echo -e "\n## Météo actuelle\n$METEO" >> README.md
 
-      - name: Commit et push des changements dans README.md
+      - name: Ajouter humidity_chart.png au dépôt
+        run: |
+          git add humidity_chart.png  # Ajouter l'image au staging
+          git commit -m "Ajouter le graphique d'humidité" || echo "Aucun changement à commit"  # Commit si nécessaire
+
+      - name: Commit et push des changements dans README.md et humidity_chart.png
         run: |
           git config --global user.email "trhacknon@proton.me"
           git config --global user.name "Trhacknon-bot"
 
-          # Ajouter uniquement le fichier README.md
+          # Ajouter uniquement les fichiers modifiés (README.md et humidity_chart.png)
           git add README.md
+          git add humidity_chart.png
 
           # Faire un commit si des changements sont présents
-          git commit -m "Mise à jour de la météo dans README" || echo "Aucun changement à commit"
+          git commit -m "Mise à jour de la météo et ajout du graphique d'humidité" || echo "Aucun changement à commit"
 
-          # Récupérer les modifications distantes avant de pousser
-          git pull origin main --no-rebase || echo "Pas de changements distants à récupérer"
-
-          # Pousser les modifications dans le fichier README.md
+          # Pousser les modifications dans le dépôt
           git push origin main
