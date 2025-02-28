@@ -22,14 +22,16 @@ jobs:
           pip install -r requirements.txt
 
       - name: Exécuter le script météo
+        id: meteo
         run: |
           source venv/bin/activate
           METEO=$(python3 script_meteo.py)  # Cette commande doit retourner la météo au format texte brut
+          echo "METEO=$METEO" >> $GITHUB_ENV  # Déclare METEO comme variable d'environnement
 
       - name: Mettre à jour la section météo dans README.md
         run: |
           # Remplacer la section météo dans README.md sans effacer le reste du fichier
-          sed -i '/<!-- METEO_START -->/,/<!-- METEO_END -->/c\<!-- METEO_START -->\n$METEO\n<!-- METEO_END -->' README.md
+          sed -i '/<!-- METEO_START -->/,/<!-- METEO_END -->/c\<!-- METEO_START -->\n'"${METEO}"'\n<!-- METEO_END -->' README.md
 
       - name: Commit et push des changements dans README.md
         run: |
