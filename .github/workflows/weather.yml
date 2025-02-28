@@ -1,35 +1,36 @@
-name: Mise à jour de la météo dans README  
+name: Mise à jour de la météo dans README
 
-on:  
-  push:    
-    branches:  
-      - main  
-  workflow_dispatch:  # Permet d'exécuter manuellement  
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Permet d'exécuter manuellement
   schedule:
     - cron: "0 6 * * *"  # Exécution quotidienne à 6h UTC
 
-jobs:  
-  update-weather:  
-    runs-on: ubuntu-latest  
-    steps:  
-      - name: Vérification du code source  
-        uses: actions/checkout@v2  
+jobs:
+  update-weather:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Vérification du code source
+        uses: actions/checkout@v2
 
-      - name: Installer les dépendances  
-        run: |  
-          python3 -m venv venv  
-          source venv/bin/activate  
-          pip install -r requirements.txt  
+      - name: Installer les dépendances
+        run: |
+          python3 -m venv venv
+          source venv/bin/activate
+          pip install -r requirements.txt
 
-      - name: Exécuter le script météo  
-        run: |  
-          source venv/bin/activate  
-          python3 script_meteo.py  # Remplace par le nom de ton script  
+      - name: Exécuter le script météo
+        run: |
+          source venv/bin/activate
+          python3 script_meteo.py  # Remplace par le nom de ton script
 
-      - name: Commit et push des changements dans README.md  
-        run: |  
-          git config --global user.email "trhacknon@proton.me"  
-          git config --global user.name "Trhacknon-bot"  
-          git add README.md  
-          git commit -m "Mise à jour de la météo dans README" || echo "Aucun changement à commit"  
-          git push
+      - name: Commit et push des changements dans README.md
+        run: |
+          git config --global user.email "trhacknon@proton.me"
+          git config --global user.name "Trhacknon-bot"
+          git pull --rebase origin main  # Récupère les modifications distantes
+          git add README.md
+          git commit -m "Mise à jour de la météo dans README" || echo "Aucun changement à commit"
+          git push origin main  # Pousse les changements après avoir réintégré les modifications distantes
