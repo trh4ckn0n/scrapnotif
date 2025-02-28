@@ -24,35 +24,35 @@ Ce repo contient plusieurs workflows GitHub Actions :
 ## Météo actuelle :
 ## Météo des grandes villes + Gaza et Kiev 🌍
 
-🕒 Mise à jour : 01/03/2025 00:30:30
+🕒 Mise à jour : 01/03/2025 00:36:42
 
 ### 🌍 Strasbourg 🌥️
 **Conditions :** couvert
-**Température :** 0.35°C
-**Humidité :** 84%
-**Vent :** 1.88 m/s
+**Température :** 0.96°C
+**Humidité :** 83%
+**Vent :** 1.76 m/s
 
 ### 🌍 Mulhouse 🌥️
 **Conditions :** nuageux
-**Température :** 2.51°C
-**Humidité :** 90%
+**Température :** 2.17°C
+**Humidité :** 92%
 **Vent :** 2.57 m/s
 
 ### 🌍 Montbéliard 🌥️
 **Conditions :** nuageux
 **Température :** 2.77°C
 **Humidité :** 96%
-**Vent :** 3.65 m/s
+**Vent :** 3.72 m/s
 
 ### 🌍 Besançon 🌥️
 **Conditions :** nuageux
 **Température :** 0.18°C
 **Humidité :** 89%
-**Vent :** 2.42 m/s
+**Vent :** 2.6 m/s
 
 ### 🌍 Paris 🌥️
 **Conditions :** partiellement nuageux
-**Température :** 4.74°C
+**Température :** 4.71°C
 **Humidité :** 87%
 **Vent :** 4.63 m/s
 
@@ -60,13 +60,13 @@ Ce repo contient plusieurs workflows GitHub Actions :
 **Conditions :** couvert
 **Température :** 4.75°C
 **Humidité :** 72%
-**Vent :** 0.7 m/s
+**Vent :** 0.86 m/s
 
 ### 🌍 Lyon 🌥️
 **Conditions :** couvert
 **Température :** -0.09°C
 **Humidité :** 86%
-**Vent :** 1.48 m/s
+**Vent :** 1.27 m/s
 
 ### 🌍 Toulouse ☀️
 **Conditions :** ciel dégagé
@@ -77,8 +77,8 @@ Ce repo contient plusieurs workflows GitHub Actions :
 ### 🌍 Nice 🌥️
 **Conditions :** couvert
 **Température :** 4.72°C
-**Humidité :** 84%
-**Vent :** 0.38 m/s
+**Humidité :** 80%
+**Vent :** 0.49 m/s
 
 ### 🌍 Nantes ☀️
 **Conditions :** ciel dégagé
@@ -88,9 +88,9 @@ Ce repo contient plusieurs workflows GitHub Actions :
 
 ### 🌍 Strasbourg 🌥️
 **Conditions :** couvert
-**Température :** 0.35°C
-**Humidité :** 84%
-**Vent :** 1.88 m/s
+**Température :** 0.96°C
+**Humidité :** 83%
+**Vent :** 1.76 m/s
 
 ### 🌍 Montpellier ☀️
 **Conditions :** ciel dégagé
@@ -106,26 +106,29 @@ Ce repo contient plusieurs workflows GitHub Actions :
 
 ### 🌍 Lille ☀️
 **Conditions :** ciel dégagé
-**Température :** 2.25°C
+**Température :** 1.93°C
 **Humidité :** 83%
 **Vent :** 2.57 m/s
 
-### 🌍 Gaza ☀️
-**Conditions :** ciel dégagé
-**Température :** 12.66°C
-**Humidité :** 69%
-**Vent :** 1.96 m/s
+### 🌍 Gaza 🌧️
+**Conditions :** légère pluie
+**Température :** 12.45°C
+**Humidité :** 72%
+**Vent :** 2.41 m/s
 
 ### 🌍 Kiev 🌥️
 **Conditions :** couvert
-**Température :** -1.05°C
+**Température :** -1°C
 **Humidité :** 66%
-**Vent :** 3.47 m/s
+**Vent :** 3.55 m/s
 
+<p align='center'><img src='https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif' width='100%' style='border-radius: 5px; border: 3px solid #39FF14; box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;' /></p>
 
 ### 🌡️ Graphique d'humidité des villes
 ![Graphique d'humidité](humidity_chart.png)
 
 <p align='center'><img src='https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif' width='100%' style='border-radius: 5px; border: 3px solid #39FF14; box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;' /></p>
+
+
 ## Météo actuelle
 ✅ Météo mise à jour avec succès.
