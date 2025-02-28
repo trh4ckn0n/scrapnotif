@@ -4,7 +4,7 @@ from datetime import datetime
 # Clé API OpenWeatherMap (à remplacer si nécessaire)
 API_KEY = "c7381d724afbdc1e5e150a2482400341"
 
-# Liste des villes (sans ",FR" qui causait des erreurs)
+# Liste des villes
 CITIES = ["Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Strasbourg", "Montpellier", "Bordeaux", "Lille", "Gaza", "Kiev"]
 
 # Fonction pour obtenir les données météo d'une ville
@@ -28,7 +28,7 @@ def get_weather_data(city):
 # Fonction pour mettre à jour le README.md
 def update_readme(weather_data):
     try:
-        # Nouveau contenu à écrire
+        # Contenu météo
         new_weather_info = "## Météo des grandes villes + Gaza et Kiev 🌍\n"
         new_weather_info += f"🕒 Mise à jour : {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}\n\n"
 
@@ -43,7 +43,7 @@ def update_readme(weather_data):
             else:
                 new_weather_info += f"### 🌍 {city}\n❌ Erreur de récupération des données météo\n\n"
 
-        # Réécriture complète du fichier README.md
+        # Réécriture du fichier README.md
         with open("README.md", "w", encoding="utf-8") as readme_file:
             readme_file.write(new_weather_info)
 
