@@ -1,5 +1,6 @@
 import requests
 from datetime import datetime
+import pytz
 
 # Clé API OpenWeatherMap (à remplacer si nécessaire)
 API_KEY = "c7381d724afbdc1e5e150a2482400341"
@@ -30,7 +31,9 @@ def update_readme(weather_data):
     try:
         # Contenu météo
         new_weather_info = "## Météo des grandes villes + Gaza et Kiev 🌍\n"
-        new_weather_info += f"🕒 Mise à jour : {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}\n\n"
+        paris_tz = pytz.timezone('Europe/Paris')# Définir le fuseau horaire de Paris
+        current_time = datetime.now(paris_tz)
+        new_weather_info += f"🕒 Mise à jour : {current_time.strftime('%d/%m/%Y %H:%M:%S')}\n\n"
 
         for data in weather_data:
             city = data["city"]
