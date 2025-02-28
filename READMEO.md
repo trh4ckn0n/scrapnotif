@@ -10,13 +10,13 @@ Ce repo contient plusieurs workflows GitHub Actions :
 3. **Monitoring & Sécurité** : Vérifie les dépendances du projet pour détecter des vulnérabilités de sécurité en utilisant pip-audit.
 
 <p align="center"><img src="https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif" width="100%" style="border-radius: 5px; border: 3px solid #39FF14; box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;" /></p>
+
 ## Usage
 
 1. Configurez votre bot Telegram pour envoyer des notifications.
 2. Modifiez le script de scraping pour qu'il récupère les données pertinentes du site que vous souhaitez surveiller.
 3. Exécutez les workflows GitHub Actions pour les vérifications de sécurité.
 
----
 <p align="center"><img src="https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif" width="100%" style="border-radius: 5px; border: 3px solid #39FF14; box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;" /></p>
 <img src="./file-9Sjd4puWVL4rccYH5NQcty.webp" alt="Image 2" width="400"/>
 <p align="center"><img src="https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif" width="100%" style="border-radius: 5px; border: 3px solid #39FF14; box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;" /></p>
