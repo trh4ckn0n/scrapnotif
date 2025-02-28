@@ -28,14 +28,15 @@ jobs:
           METEO=$(python3 script_meteo.py)  # Cette commande doit retourner la météo au format texte brut
           echo "METEO=$METEO" >> $GITHUB_ENV  # Déclare METEO comme variable d'environnement
 
-      - name: Ajouter le contenu de READMEO.md à README.md
+      - name: Ajouter le contenu de READMEO.md en haut de README.md
         run: |
-          # Ajouter le contenu de READMEO.md au fichier README.md tout en conservant les autres sections
-          cat READMEO.md >> README.md
+          # Ajouter le contenu de READMEO.md en haut de README.md
+          cat READMEO.md README.md > temp_readme.md
+          mv temp_readme.md README.md  # Remplacer README.md par la version mise à jour
 
-      - name: Ajouter la météo mise à jour à la fin de README.md
+      - name: Ajouter la section météo mise à jour à README.md
         run: |
-          # Ajouter la météo sous le contenu existant du fichier README.md
+          # Ajouter la section de météo mise à jour sous le contenu ajouté de READMEO.md
           echo -e "\n## Météo actuelle\n$METEO" >> README.md
 
       - name: Commit et push des changements dans README.md
