@@ -31,12 +31,10 @@ jobs:
       - name: Générer le graphique d'humidité
         run: |
           source venv/bin/activate
-          python3 generate_humidity_chart.py  # Ce script doit générer le fichier humidity_chart.png
-
       - name: Ajouter le contenu de README.md en haut de README.md
         run: |
           # Ajouter le contenu de README.md en haut de README.md
-          cat README.md README.md > temp_readme.md
+          cat READMEO.md README.md > temp_readme.md
           mv temp_readme.md README.md  # Remplacer README.md par la version mise à jour
 
       - name: Ajouter la section météo mise à jour à README.md
