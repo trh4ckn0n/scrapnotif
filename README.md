@@ -1,24 +1,5 @@
-# Projet GitHub Actions avec Notifications, Scraping et Sécurité
-
-Ce repo contient plusieurs workflows GitHub Actions :
-
-1. **Scraping & Reporting** : Un script Python qui scrute un site web pour récupérer des informations (comme les titres des articles) et met à jour un fichier JSON.
-2. **Envoi de Notifications** : Notifie via Telegram ou Discord lorsqu'une PR est créée ou un commit est poussé.
-3. **Monitoring & Sécurité** : Vérifie les dépendances du projet pour détecter des vulnérabilités de sécurité en utilisant `pip-audit`.
-
-## Usage
-
-1. Configurez votre bot Telegram pour envoyer des notifications.
-2. Modifiez le script de scraping pour qu'il récupère les données pertinentes du site que vous souhaitez surveiller.
-3. Exécutez les workflows GitHub Actions pour les vérifications de sécurité.
-
-## Météo actuelle
-
-<!-- METEO_START -->
-La météo d'aujourd'hui est : en attente de mise à jour.
-
 ## Météo des grandes villes + Gaza et Kiev 🌍
-🕒 Mise à jour : 28/02/2025 20:35:35
+🕒 Mise à jour : 28/02/2025 20:41:45
 
 ### 🌍 Paris
 **Conditions :** nuageux
@@ -29,7 +10,7 @@ La météo d'aujourd'hui est : en attente de mise à jour.
 ### 🌍 Marseille
 **Conditions :** couvert
 **Température :** 6.95°C
-**Humidité :** 70%
+**Humidité :** 71%
 **Vent :** 1.16 m/s
 
 ### 🌍 Lyon
@@ -57,10 +38,10 @@ La météo d'aujourd'hui est : en attente de mise à jour.
 **Vent :** 3.6 m/s
 
 ### 🌍 Strasbourg
-**Conditions :** nuageux
-**Température :** 3.97°C
-**Humidité :** 93%
-**Vent :** 2.06 m/s
+**Conditions :** couvert
+**Température :** 2.79°C
+**Humidité :** 83%
+**Vent :** 2.4 m/s
 
 ### 🌍 Montpellier
 **Conditions :** ciel dégagé
@@ -90,6 +71,5 @@ La météo d'aujourd'hui est : en attente de mise à jour.
 **Conditions :** couvert
 **Température :** 2.07°C
 **Humidité :** 75%
-**Vent :** 0.45 m/s
+**Vent :** 3.46 m/s
 
-<!-- METEO_END -->
