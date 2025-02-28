@@ -17,6 +17,7 @@ weather_emojis = {
     "nuages fragmentés": "☁️",
     "averses": "🌧️",
     "pluie": "🌧️",
+    "légère pluie": "🌧️",
     "orages": "🌩️",
     "neige": "❄️",
     "brouillard": "🌫️"
