@@ -6,7 +6,7 @@ import pytz
 API_KEY = "c7381d724afbdc1e5e150a2482400341"
 
 # Liste des villes
-CITIES = ["Strazbourg", "Mulhouse", "Montbéliard", "Besançon", "Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Strasbourg", "Montpellier", "Bordeaux", "Lille", "Gaza", "Kiev"]
+CITIES = ["Strasbourg", "Mulhouse", "Montbéliard", "Besançon", "Paris", "Marseille", "Lyon", "Toulouse", "Nice", "Nantes", "Strasbourg", "Montpellier", "Bordeaux", "Lille", "Gaza", "Kiev"]
 
 # Dictionnaire pour les emojis en fonction des conditions météo en français
 weather_emojis = {
