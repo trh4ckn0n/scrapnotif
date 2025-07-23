@@ -24,103 +24,103 @@ Ce repo contient plusieurs workflows GitHub Actions :
 ## Météo actuelle :
 ## Météo des grandes villes + Gaza et Kiev 🌍
 
-🕒 Mise à jour : 22/07/2025 08:19:50
+🕒 Mise à jour : 23/07/2025 08:20:18
 
-### 🌍 Strasbourg 🌧️
-**Conditions :** pluie modérée
-**Température :** 17.06°C
-**Humidité :** 94%
-**Vent :** 4.63 m/s
+### 🌍 Strasbourg 🌥️
+**Conditions :** peu nuageux
+**Température :** 17°C
+**Humidité :** 85%
+**Vent :** 2.68 m/s
 
 ### 🌍 Mulhouse ☀️
 **Conditions :** ciel dégagé
-**Température :** 18.21°C
-**Humidité :** 73%
-**Vent :** 7.72 m/s
+**Température :** 16.25°C
+**Humidité :** 79%
+**Vent :** 3.6 m/s
 
 ### 🌍 Montbéliard 🌥️
-**Conditions :** nuageux
+**Conditions :** partiellement nuageux
 **Température :** 16.66°C
-**Humidité :** 82%
-**Vent :** 4.43 m/s
+**Humidité :** 80%
+**Vent :** 0.73 m/s
 
 ### 🌍 Besançon 🌥️
 **Conditions :** nuageux
-**Température :** 14.94°C
-**Humidité :** 86%
-**Vent :** 4.63 m/s
+**Température :** 14.63°C
+**Humidité :** 91%
+**Vent :** 0.8 m/s
 
-### 🌍 Paris 🌥️
-**Conditions :** couvert
-**Température :** 17°C
-**Humidité :** 85%
-**Vent :** 6.69 m/s
-
-### 🌍 Marseille ☀️
+### 🌍 Paris ☀️
 **Conditions :** ciel dégagé
-**Température :** 19.25°C
+**Température :** 18.11°C
+**Humidité :** 83%
+**Vent :** 1.54 m/s
+
+### 🌍 Marseille 🌥️
+**Conditions :** peu nuageux
+**Température :** 20.29°C
 **Humidité :** 60%
-**Vent :** 4.92 m/s
+**Vent :** 2.76 m/s
 
-### 🌍 Lyon ☀️
-**Conditions :** ciel dégagé
-**Température :** 13.62°C
-**Humidité :** 87%
-**Vent :** 0.97 m/s
+### 🌍 Lyon 🌥️
+**Conditions :** nuageux
+**Température :** 13.7°C
+**Humidité :** 85%
+**Vent :** 0.71 m/s
 
 ### 🌍 Toulouse 🌥️
-**Conditions :** nuageux
-**Température :** 16.99°C
-**Humidité :** 88%
+**Conditions :** partiellement nuageux
+**Température :** 18.99°C
+**Humidité :** 72%
 **Vent :** 2.06 m/s
 
 ### 🌍 Nice ☀️
 **Conditions :** ciel dégagé
-**Température :** 16.94°C
-**Humidité :** 69%
-**Vent :** 0.67 m/s
+**Température :** 16.39°C
+**Humidité :** 77%
+**Vent :** 0.41 m/s
 
-### 🌍 Nantes 🌥️
-**Conditions :** couvert
-**Température :** 16.96°C
-**Humidité :** 88%
-**Vent :** 1.54 m/s
-
-### 🌍 Strasbourg 🌧️
+### 🌍 Nantes 🌧️
 **Conditions :** pluie modérée
-**Température :** 17.06°C
-**Humidité :** 94%
-**Vent :** 4.63 m/s
+**Température :** 15.96°C
+**Humidité :** 100%
+**Vent :** 2.06 m/s
+
+### 🌍 Strasbourg 🌥️
+**Conditions :** peu nuageux
+**Température :** 17°C
+**Humidité :** 85%
+**Vent :** 2.68 m/s
 
 ### 🌍 Montpellier ☀️
 **Conditions :** ciel dégagé
-**Température :** 21.71°C
-**Humidité :** 60%
-**Vent :** 3.09 m/s
+**Température :** 19.71°C
+**Humidité :** 73%
+**Vent :** 1.03 m/s
 
 ### 🌍 Bordeaux 🌥️
-**Conditions :** couvert
-**Température :** 17.15°C
+**Conditions :** partiellement nuageux
+**Température :** 18.15°C
 **Humidité :** 88%
-**Vent :** 0 m/s
-
-### 🌍 Lille 🌫️
-**Conditions :** brume
-**Température :** 16.34°C
-**Humidité :** 94%
 **Vent :** 2.06 m/s
+
+### 🌍 Lille 🌥️
+**Conditions :** peu nuageux
+**Température :** 16.16°C
+**Humidité :** 89%
+**Vent :** 3.6 m/s
 
 ### 🌍 Gaza ☀️
 **Conditions :** ciel dégagé
-**Température :** 29.34°C
+**Température :** 30.82°C
 **Humidité :** 66%
-**Vent :** 1.17 m/s
+**Vent :** 1.83 m/s
 
 ### 🌍 Kiev 🌥️
-**Conditions :** peu nuageux
-**Température :** 25.96°C
-**Humidité :** 72%
-**Vent :** 2.23 m/s
+**Conditions :** couvert
+**Température :** 22.62°C
+**Humidité :** 77%
+**Vent :** 0.89 m/s
 
 <p align='center'><img src='https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif' width='100%' style='border-radius: 5px; border: 3px solid #39FF14; box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;' /></p>
 
