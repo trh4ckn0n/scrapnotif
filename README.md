@@ -24,103 +24,103 @@ Ce repo contient plusieurs workflows GitHub Actions :
 ## Météo actuelle :
 ## Météo des grandes villes + Gaza et Kiev 🌍
 
-🕒 Mise à jour : 15/08/2025 08:19:33
+🕒 Mise à jour : 16/08/2025 08:17:16
 
 ### 🌍 Strasbourg ☀️
 **Conditions :** ciel dégagé
-**Température :** 21.04°C
-**Humidité :** 88%
-**Vent :** 0 m/s
+**Température :** 21°C
+**Humidité :** 73%
+**Vent :** 2.57 m/s
 
 ### 🌍 Mulhouse ☀️
 **Conditions :** ciel dégagé
-**Température :** 21.13°C
-**Humidité :** 80%
-**Vent :** 0.45 m/s
+**Température :** 21.69°C
+**Humidité :** 75%
+**Vent :** 1.34 m/s
 
 ### 🌍 Montbéliard ☀️
 **Conditions :** ciel dégagé
 **Température :** 23.32°C
-**Humidité :** 80%
-**Vent :** 0.29 m/s
+**Humidité :** 86%
+**Vent :** 1.31 m/s
 
 ### 🌍 Besançon ☀️
 **Conditions :** ciel dégagé
 **Température :** 20.78°C
-**Humidité :** 81%
-**Vent :** 0.72 m/s
+**Humidité :** 87%
+**Vent :** 0.31 m/s
 
 ### 🌍 Paris ☀️
 **Conditions :** ciel dégagé
-**Température :** 18.77°C
-**Humidité :** 80%
-**Vent :** 3.6 m/s
+**Température :** 19.21°C
+**Humidité :** 85%
+**Vent :** 4.63 m/s
 
-### 🌍 Marseille 🌥️
-**Conditions :** peu nuageux
-**Température :** 23.62°C
-**Humidité :** 43%
-**Vent :** 1.85 m/s
+### 🌍 Marseille ☀️
+**Conditions :** ciel dégagé
+**Température :** 24.18°C
+**Humidité :** 50%
+**Vent :** 0.89 m/s
 
 ### 🌍 Lyon ☀️
 **Conditions :** ciel dégagé
-**Température :** 20.4°C
+**Température :** 21.68°C
 **Humidité :** 72%
-**Vent :** 0.82 m/s
+**Vent :** 1.18 m/s
 
 ### 🌍 Toulouse ☀️
 **Conditions :** ciel dégagé
-**Température :** 22.99°C
-**Humidité :** 73%
-**Vent :** 1.03 m/s
+**Température :** 21.99°C
+**Humidité :** 68%
+**Vent :** 1.54 m/s
 
 ### 🌍 Nice ☀️
 **Conditions :** ciel dégagé
-**Température :** 14.63°C
-**Humidité :** 62%
-**Vent :** 3.06 m/s
+**Température :** 14.91°C
+**Humidité :** 66%
+**Vent :** 2.79 m/s
 
 ### 🌍 Nantes ☀️
 **Conditions :** ciel dégagé
-**Température :** 19.96°C
-**Humidité :** 73%
-**Vent :** 5.14 m/s
+**Température :** 22.96°C
+**Humidité :** 53%
+**Vent :** 4.12 m/s
 
 ### 🌍 Strasbourg ☀️
 **Conditions :** ciel dégagé
-**Température :** 21.04°C
-**Humidité :** 88%
-**Vent :** 0 m/s
+**Température :** 21°C
+**Humidité :** 73%
+**Vent :** 2.57 m/s
 
 ### 🌍 Montpellier ☀️
 **Conditions :** ciel dégagé
-**Température :** 24.16°C
-**Humidité :** 64%
+**Température :** 27.5°C
+**Humidité :** 49%
 **Vent :** 3.09 m/s
 
 ### 🌍 Bordeaux ☀️
 **Conditions :** ciel dégagé
-**Température :** 21.15°C
-**Humidité :** 94%
-**Vent :** 1.03 m/s
+**Température :** 22.15°C
+**Humidité :** 78%
+**Vent :** 1.54 m/s
 
-### 🌍 Lille ☀️
-**Conditions :** ciel dégagé
-**Température :** 16.18°C
-**Humidité :** 94%
-**Vent :** 2.06 m/s
+### 🌍 Lille 🌥️
+**Conditions :** couvert
+**Température :** 18.93°C
+**Humidité :** 83%
+**Vent :** 3.09 m/s
 
 ### 🌍 Gaza ☀️
 **Conditions :** ciel dégagé
-**Température :** 31.45°C
-**Humidité :** 63%
-**Vent :** 2.5 m/s
+**Température :** 29.76°C
+**Humidité :** 70%
+**Vent :** 3.97 m/s
 
 ### 🌍 Kiev ☀️
 **Conditions :** ciel dégagé
-**Température :** 21.51°C
-**Humidité :** 58%
-**Vent :** 0.45 m/s
+**Température :** 20.34°C
+**Humidité :** 65%
+**Vent :** 1.22 m/s
 
 <p align='center'><img src='https://raw.githubusercontent.com/khoa083/khoa/main/Khoa_ne/img/Rainbow.gif' width='100%' style='border-radius: 5px; border: 3px solid #39FF14; box-shadow: 0 0 10px #39FF14, 0 0 20px #39FF14;' /></p>
 
